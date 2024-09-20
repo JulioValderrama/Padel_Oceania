@@ -10,3 +10,26 @@ df_liabilities = pd.read_csv('data/Liabilities.csv')
 print("Income Data:\n", df_income.head())
 print("Expenses Data:\n", df_expenses.head())
 print("Liabilities Data:\n", df_liabilities.head())
+
+df_inventory = pd.DataFrame(columns=['sku','batch','quantity','unit_price','total_transaction','ean','asin','supplier'])
+
+def add_inventory(expenses_df):
+    for index, row in expenses_df.iterrows():
+        if row['expense_type'] == 'purchase_inventory':
+            inventory_row = {
+                'sku': row['sku'],
+                'batch': row['batch'],
+                'quantity': row['quantity'],
+                'unit_price': row['unit_price'],
+                'total_transaction': row['total_transaction'],
+                'ean': row['ean'],
+                'asin': row['asin'],
+                'supplier': row['channel']
+            }
+            
+            df_inventory.loc[len(df_inventory)] = inventory_row
+
+add_inventory(df_expenses)
+
+print(df_inventory)
+
