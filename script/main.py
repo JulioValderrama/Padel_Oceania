@@ -56,7 +56,7 @@ def add_inventory(expenses_df):
                 'ean': row['ean'],
                 'asin': row['asin'],
                 'supplier': row['channel'],
-                'total_cogs': unit_price
+                'total_cogs': unit_price    # Total COGS per unit (shipping and taxes) + the unit_price
             }
             
             df_inventory.loc[len(df_inventory)] = inventory_row
