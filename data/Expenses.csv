@@ -1,26 +1,26 @@
 expense_entry_id,expense_id,expense_type,sku,batch,unit_price,quantity,item,channel,ean,asin,total_transaction,payment_type,payment_status,date,description
-1,EXP001,purchase_inventory,"162,593",1,$34.20,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,$684.06,cash,completed,23/04/2024,Pack Joma Master Negro Turquesa Flour x 10
-2,EXP001,purchase_inventory,"134,487",1,$5.13,10,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,$51.27,cash,completed,23/04/2024,Bullpadel Indiga Control 2022
-3,EXP001,purchase_inventory,"141,108",1,$46.45,10,Dunlop Speed Elite Unisex Padel Racket - Orange,Tienda Padel Point,45566303493,,$464.51,cash,completed,23/04/2024,Dunlop Speed Elite Unisex Padel Racket - Orange
-4,EXP001,shipping_supplier,,1,$124.16,1,Shipping,Tienda Padel Point,,,$124.16,cash,completed,23/04/2024,Shipping
-5,EXP002,import_taxes,,1,$278.57,1,Import Duties taxes ,UPS,,,$278.57,cash,completed,24/04/2024,Import Duties taxes 
-6,EXP003,Administrative Expense,,,$19.46,,Packaging to ship to Amazon,Office Works,,,$0.00,cash,completed,10/05/2024,Packaging to ship to Amazon
-7,EXP004,purchase_inventory,"162,593",2,$32.64,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,$652.90,cash,completed,13/06/2024,Pack Joma Master Negro Turquesa Flour x 10
-8,EXP004,purchase_inventory,"148,027",2,$65.29,4,Adidas RX 2000 Light 2023,Tienda Padel Point,8436548247775,B0BPN37VVM,$261.15,cash,completed,13/06/2024,Adidas RX 2000 Light 2023
-9,EXP004,purchase_inventory,"163,016",2,$78.35,10,Adidas Drive 3.3 Blue 2024,Tienda Padel Point,8436548249021,B0CNWGQ5DC,$783.50,cash,completed,13/06/2024,Adidas Drive 3.3 Blue 2024
-10,EXP004,shipping_supplier,,2,$122.17,1,Shipping,Tienda Padel Point,,,$122.17,cash,completed,13/06/2024,Shipping
-11,EXP004,purchase_inventory,"142,586",2,$56.59,5,Wilson Blade Team V2 Black,Tienda Padel Point,97512545624,B09MWJM2P6,$282.94,cash,completed,13/06/2024,Wilson Blade Team V2 Black
-12,EXP004,purchase_inventory,"148,187",2,$67.36,3,Bullpadel Indiga Power 2023,Tienda Padel Point,8445402248605,,$202.09,cash,completed,13/06/2024,Bullpadel Indiga Power 2023
-13,EXP004,purchase_inventory,"172,892",2,$52.28,10,Bullpadel Raider Power,Tienda Padel Point,8434417935983,B08P5YJT4G,$522.84,cash,completed,13/06/2024,Bullpadel Raider Power
-14,EXP004,purchase_inventory,"148,058",2,$57.94,5,Adidas Drive Light 3.2 2023,Tienda Padel Point,8436548247836,B0BPN11FMB,$289.71,cash,completed,13/06/2024,Adidas Drive Light 3.2 2023
-15,EXP004,purchase_inventory,"163,022",2,$78.42,5,Adidas Drive 3.3 Vintage 2024,Tienda Padel Point,8436548249038,B0CNWHCZTP,$392.09,cash,completed,13/06/2024,Adidas Drive 3.3 Vintage 2024
-16,EXP004,shipping_supplier,,2,$122.27,1,Shipping,Tienda Padel Point,,,$122.27,cash,completed,13/06/2024,Shipping
-17,EXP005,purchase_inventory,162593,3,$34.09,10,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,$340.90,cash,completed,20/08/2024,Pack Joma Master Negro Turquesa Flour x 10
-18,EXP005,purchase_inventory,163016,3,$81.82,5,Adidas Drive 3.3 Blue 2024,Tienda Padel Point,8436548249021,B0CNWGQ5DC,$409.10,cash,completed,20/08/2024,Adidas Drive 3.3 Blue 2024
-19,EXP005,purchase_inventory,134487,3,$46.37,5,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,$231.85,cash,completed,20/08/2024,Bullpadel Indiga Control 2022
-20,EXP005,purchase_inventory,134107,3,$59.99,2,Pala Head Delta Junior 2022,Tienda Padel Point,724794397329,B09Q3FV3GZ,$119.98,cash,completed,20/08/2024,Pala Head Delta Junior 2022
-21,EXP005,purchase_inventory,148020,3,$135.00,3,Pala Head Speed Elite 2023,Tienda Padel Point,724794634325,B0BPMG21D8,$405.00,cash,completed,20/08/2024,Pala Head Speed Elite 2023
-22,EXP005,purchase_inventory,142586,3,$57.27,5,Wilson Blade Team V2 Black,Tienda Padel Point,97512545624,B09MWJM2P6,$286.35,cash,completed,20/08/2024,Wilson Blade Team V2 Black
-23,EXP005,shipping_supplier,,3,$124.00,1,Shipping,Tienda Padel Point,,,$124.00,cash,completed,20/08/2024,Shipping
-24,EXP006,purchase_inventory,162593,4,$33.89,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,$677.71,cash,completed,18/08/2024,Pack Joma Master Negro Turquesa Flour x 10
-25,EXP006,shipping_supplier,,4,$128.73,1,Shipping,Tienda Padel Point,,,$128.73,cash,completed,18/08/2024,Shipping
+1,EXP001,purchase_inventory,162593,1,34.20,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,684.06,cash,completed,23/04/2024,Pack Joma Master Negro Turquesa Flour x 10
+2,EXP001,purchase_inventory,134487,1,5.13,10,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,51.27,cash,completed,23/04/2024,Bullpadel Indiga Control 2022
+3,EXP001,purchase_inventory,141108,1,46.45,10,Dunlop Speed Elite Unisex Padel Racket - Orange,Tienda Padel Point,45566303493,,464.51,cash,completed,23/04/2024,Dunlop Speed Elite Unisex Padel Racket - Orange
+4,EXP001,shipping_supplier,,1,124.16,1,Shipping,Tienda Padel Point,,,124.16,cash,completed,23/04/2024,Shipping
+5,EXP002,import_taxes,,1,278.57,1,Import Duties taxes ,UPS,,,278.57,cash,completed,24/04/2024,Import Duties taxes 
+6,EXP003,Administrative Expense,,,19.46,,Packaging to ship to Amazon,Office Works,,,0.00,cash,completed,10/05/2024,Packaging to ship to Amazon
+7,EXP004,purchase_inventory,162593,2,32.64,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,652.90,cash,completed,13/06/2024,Pack Joma Master Negro Turquesa Flour x 10
+8,EXP004,purchase_inventory,148027,2,65.29,4,Adidas RX 2000 Light 2023,Tienda Padel Point,8436548247775,B0BPN37VVM,261.15,cash,completed,13/06/2024,Adidas RX 2000 Light 2023
+9,EXP004,purchase_inventory,163016,2,78.35,10,Adidas Drive 3.3 Blue 2024,Tienda Padel Point,8436548249021,B0CNWGQ5DC,783.50,cash,completed,13/06/2024,Adidas Drive 3.3 Blue 2024
+10,EXP004,shipping_supplier,,2,122.17,1,Shipping,Tienda Padel Point,,,122.17,cash,completed,13/06/2024,Shipping
+11,EXP004,purchase_inventory,142586,2,56.59,5,Wilson Blade Team V2 Black,Tienda Padel Point,97512545624,B09MWJM2P6,282.94,cash,completed,13/06/2024,Wilson Blade Team V2 Black
+12,EXP004,purchase_inventory,148187,2,67.36,3,Bullpadel Indiga Power 2023,Tienda Padel Point,8445402248605,,202.09,cash,completed,13/06/2024,Bullpadel Indiga Power 2023
+13,EXP004,purchase_inventory,172892,2,52.28,10,Bullpadel Raider Power,Tienda Padel Point,8434417935983,B08P5YJT4G,522.84,cash,completed,13/06/2024,Bullpadel Raider Power
+14,EXP004,purchase_inventory,148058,2,57.94,5,Adidas Drive Light 3.2 2023,Tienda Padel Point,8436548247836,B0BPN11FMB,289.71,cash,completed,13/06/2024,Adidas Drive Light 3.2 2023
+15,EXP004,purchase_inventory,163022,2,78.42,5,Adidas Drive 3.3 Vintage 2024,Tienda Padel Point,8436548249038,B0CNWHCZTP,392.09,cash,completed,13/06/2024,Adidas Drive 3.3 Vintage 2024
+16,EXP004,shipping_supplier,,2,122.27,1,Shipping,Tienda Padel Point,,,122.27,cash,completed,13/06/2024,Shipping
+17,EXP005,purchase_inventory,162593,3,34.09,10,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,340.90,cash,completed,20/08/2024,Pack Joma Master Negro Turquesa Flour x 10
+18,EXP005,purchase_inventory,163016,3,81.82,5,Adidas Drive 3.3 Blue 2024,Tienda Padel Point,8436548249021,B0CNWGQ5DC,409.10,cash,completed,20/08/2024,Adidas Drive 3.3 Blue 2024
+19,EXP005,purchase_inventory,134487,3,46.37,5,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,231.85,cash,completed,20/08/2024,Bullpadel Indiga Control 2022
+20,EXP005,purchase_inventory,134107,3,59.99,2,Pala Head Delta Junior 2022,Tienda Padel Point,724794397329,B09Q3FV3GZ,119.98,cash,completed,20/08/2024,Pala Head Delta Junior 2022
+21,EXP005,purchase_inventory,148020,3,135.00,3,Pala Head Speed Elite 2023,Tienda Padel Point,724794634325,B0BPMG21D8,405.00,cash,completed,20/08/2024,Pala Head Speed Elite 2023
+22,EXP005,purchase_inventory,142586,3,57.27,5,Wilson Blade Team V2 Black,Tienda Padel Point,97512545624,B09MWJM2P6,286.35,cash,completed,20/08/2024,Wilson Blade Team V2 Black
+23,EXP005,shipping_supplier,,3,124.00,1,Shipping,Tienda Padel Point,,,124.00,cash,completed,20/08/2024,Shipping
+24,EXP006,purchase_inventory,162593,4,33.89,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,677.71,cash,completed,18/08/2024,Pack Joma Master Negro Turquesa Flour x 10
+25,EXP006,shipping_supplier,,4,128.73,1,Shipping,Tienda Padel Point,,,128.73,cash,completed,18/08/2024,Shipping
