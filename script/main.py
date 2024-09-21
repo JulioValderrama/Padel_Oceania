@@ -22,7 +22,7 @@ df_income_statement = pd.DataFrame(columns=['date','total_revenue','total_cogs',
 
 
 # ---------------------------------READING df_expenses AND CREATING INVENTORY OUT OF BUYING BATCHES FROM SUPPLIER -------------------------------------
-def add_inventory(expenses_df):
+def add_inventory(expenses_df):   #FIFO
     for index, row in expenses_df.iterrows():
         if row['expense_type'] == 'purchase_inventory':
 
@@ -110,8 +110,10 @@ def calculate_cogs(sku, quantity_sold):
 
 # Income Statement Function
 def income_statement(df_income, year, quarter=None, month=None):
+
     # Filter data by year, quarter, or month
     df_filtered = df_income[df_income['date'].dt.year == year]
+
     if quarter:
         df_filtered = df_filtered[df_filtered['date'].dt.quarter == quarter]
     elif month:
@@ -126,8 +128,14 @@ def income_statement(df_income, year, quarter=None, month=None):
         sku = sale['sku']
         quantity_sold = sale['quantity']
         unit_price = sale['unit_price']
+
+        # Calculate revenue and COGS
         total_revenue += unit_price * quantity_sold
         cogs += calculate_cogs(sku, quantity_sold)
+
+        # Update the inventory after calculating COGS
+        update_inventory(sku, quantity_sold)  # Now correctly passing the arguments
+        
         total_operational_expenses += sale['total_amazon_cost'] if not pd.isna(sale['total_amazon_cost']) else 0
 
     gross_margin = total_revenue - cogs
@@ -135,9 +143,23 @@ def income_statement(df_income, year, quarter=None, month=None):
     taxes = 0  # Adjust taxes based on your logic
     net_profit = operational_margin - taxes
 
-    return total_revenue, cogs, total_operational_expenses, net_profit
+    # Return a dictionary with the calculated values
+    return {
+        'total_revenue': total_revenue,
+        'cogs': cogs,
+        'total_operational_expenses': total_operational_expenses,
+        'gross_margin': gross_margin,
+        'operational_margin': operational_margin,
+        'taxes': taxes,
+        'net_profit': net_profit
+    }
 
 
-revenue, expense, operational_expense, income = income_statement(2024,3)
-print(f"Total Revenue: {revenue}, Total Expense: {expense}, Operational Expense: {operational_expense}, Net Income: {income}")
+
+# 
+add_inventory(df_expenses)  # Populate the inventory with purchase data
+
+
+result = income_statement(df_income,2024)
+print(f"Total Revenue: {result['total_revenue']}, Total COGS: {result['cogs']}, Operational Expense: {result['total_operational_expenses']}, Net Income: {result['net_profit']}")
 
