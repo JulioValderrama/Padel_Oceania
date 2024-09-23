@@ -321,13 +321,15 @@ def calculating_other_income(df_income, year, quarter=None, month=None):
     # Filter data by year, quarter, or month
     df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
 
-    other_income = 0
+    total_other_income = 0
 
     for index, row in df_income_filtered.iterrows():
         if row['income_type'] in other_income:
-            other_income += row['total_transaction']
+            total_other_income += row['total_transaction']
 
-    print('OTHER INCOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', other_income)
+    print('OTHER INCOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', total_other_income)
+
+    return total_other_income
 
 def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
 
@@ -353,7 +355,7 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
     total_revenue = 0
     cogs = 0
     total_operational_expenses = calculating_operational_expenses(df_expenses, year, quarter, month)
-    other_income = 0
+    total_other_income = calculating_other_income(df_income, year, quarter, month)
 
     # Iterate through sales and calculate totals
     for _, sale in df_income_filtered.iterrows():
@@ -379,8 +381,9 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
     return {
         'total_revenue': total_revenue,
         'cogs': cogs,
-        'total_operational_expenses': total_operational_expenses,
         'gross_margin': gross_margin,
+        'other_income': total_other_income,
+        'total_operational_expenses': total_operational_expenses,
         'operational_margin': operational_margin,
         'taxes': taxes,
         'net_profit': net_profit
