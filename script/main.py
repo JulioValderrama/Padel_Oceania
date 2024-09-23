@@ -1,4 +1,5 @@
 import pandas as pd
+from pdf_export import create_comparative_table, export_to_pdf  # Importing functions from the pdf_export module
 
 # Read all CSV files and create DataFrames
 df_income = pd.read_csv('data/Income.csv')
@@ -393,32 +394,43 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     return income_statement
 
-# Function to calculate the income statement for two periods and compare them
-def generate_comparative_income_statement(df_income, df_expenses, year, quarter=None, month=None):
-    # Calculate the current period's income statement
-    current_period = income_statement(df_income, df_expenses, year, quarter, month)
-    
-    # Automatically get the previous period based on the input
+# Function to generate period labels dynamically
+def generate_period_label(year, quarter=None, month=None):
     if month:
-        # Compare with the previous month in the same year
-        previous_month = month - 1 if month > 1 else 12
-        previous_year = year if month > 1 else year - 1  # Go to the previous year if month is January
-        previous_quarter = None  # No quarter when month is provided
+        # Convert month number to month name
+        month_name = pd.to_datetime(f'{year}-{month}-01').strftime('%B')
+        return f'{month_name} {year}'
     elif quarter:
-        # Compare with the previous quarter in the same year
-        previous_quarter = quarter - 1 if quarter > 1 else 4
-        previous_year = year if quarter > 1 else year - 1  # Go to previous year if it's Q1
-        previous_month = None  # No month when quarter is provided
+        return f'Q{quarter} {year}'
     else:
-        # Compare the full year with the previous year
-        previous_year = year - 1
-        previous_quarter = None
-        previous_month = None
+        return str(year)
 
-    # Calculate the previous period's income statement
-    previous_period = income_statement(df_income, df_expenses, previous_year, previous_quarter, previous_month)
-    
-    return current_period, previous_period
+# Function to calculate current and previous period income statements and automatically generate labels
+def generate_comparative_income_statement(df_income, df_expenses, year, quarter=None, month=None):
+    # Calculate current period income statement
+    current_period = income_statement(df_income, df_expenses, year, quarter, month)
+
+    # Generate current period label
+    current_period_label = generate_period_label(year, quarter, month)
+
+    # Calculate previous period based on provided data
+    if month:
+        previous_month = month - 1 if month > 1 else 12
+        previous_year = year if month > 1 else year - 1
+        previous_period_label = generate_period_label(previous_year, month=previous_month)
+        previous_period = income_statement(df_income, df_expenses, previous_year, None, previous_month)
+    elif quarter:
+        previous_quarter = quarter - 1 if quarter > 1 else 4
+        previous_year = year if quarter > 1 else year - 1
+        previous_period_label = generate_period_label(previous_year, quarter=previous_quarter)
+        previous_period = income_statement(df_income, df_expenses, previous_year, previous_quarter)
+
+    else:
+        previous_year = year - 1
+        previous_period_label = generate_period_label(previous_year)
+        previous_period = income_statement(df_income, df_expenses, previous_year)
+
+    return current_period, previous_period, current_period_label, previous_period_label
 
 
 #  ---------------------------- WORK FLOW --------------------------------------------------------------------------
@@ -435,10 +447,14 @@ add_inventory(df_expenses)
 df_expenses = reading_amazon_csv_to_expenses(df_expenses)
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
-# Calculating the Income Statement by year, quarter and month if provided with all DataFrames updated
-current_period, previous_period = generate_comparative_income_statement(df_income, df_expenses, 2024, 3)
+# Generate comparative income statement for Q2 2024
+current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024, 3)
+print('CURRENT PREVIOUS', current_period_label)
+print('PREVIOUS', previous_period_label)
 
-print(current_period, previous_period)
+# Create the table and export to PDF (period labels generated automatically)
+create_comparative_table(current_period, previous_period)
+export_to_pdf(current_period, previous_period, current_period_label, previous_period_label)
 
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)

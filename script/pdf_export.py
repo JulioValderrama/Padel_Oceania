@@ -1,0 +1,100 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from fpdf import FPDF
+
+# Function to calculate the percentage change (VAR%)
+def calculate_var_percentage(current, previous):
+    if previous == 0:
+        return 100.0 if current > 0 else 0.0
+    return ((current - previous) / previous) * 100
+
+# Function to format numbers with two decimals
+def format_value(value):
+    return f'{float(value):,.2f}'  # Ensure we restrict to 2 decimal places
+
+# Function to create a comparative table using matplotlib (optional visualization)
+def create_comparative_table(current_period, previous_period):
+    # Define the fields you want to compare
+    fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
+    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
+
+    # Extract values from the dictionaries
+    current_values = [current_period[field] for field in fields]
+    previous_values = [previous_period[field] for field in fields]
+    var_percentage = [calculate_var_percentage(current_period[field], previous_period[field]) for field in fields]
+
+    # Create the table data
+    table_data = np.array([current_values, previous_values, var_percentage]).T
+
+    # Create the table plot using matplotlib
+    fig, ax = plt.subplots()
+    ax.axis('tight')
+    ax.axis('off')
+    ax.table(cellText=table_data,
+             colLabels=['Current Period', 'Previous Period', 'VAR %'],
+             rowLabels=row_labels,
+             loc='center')
+
+    # Show the table
+    plt.show()
+
+# Function to export the comparative table to a PDF file using fpdf
+def export_to_pdf(current_period, previous_period, current_period_label, previous_period_label):
+    pdf = FPDF()
+    pdf.add_page()
+
+    # Title
+    pdf.set_font("Arial", 'B', 16)
+    pdf.cell(200, 10, "Profit and Loss Statement", ln=True, align='C')
+
+    # Period information (current and previous period labels)
+    pdf.ln(10)  # Add some space after the title
+    pdf.set_font("Arial", 'B', 12)
+    
+    # Print period labels with correct formatting
+    pdf.cell(60, 10, 'Item', 1)
+    pdf.cell(40, 10, f'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA{current_period_label}', 1)
+    pdf.cell(40, 10, f'{previous_period_label}', 1)
+    pdf.cell(40, 10, 'VAR %', 1)
+    pdf.ln()
+
+    # Set up the green background for specific rows
+    green_rows = ['Gross Margin', 'Operational Margin', 'Net Profit']
+
+    # Define the fields you want to compare
+    fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
+    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
+
+    # Loop through fields and print them
+    for i, field in enumerate(fields):
+        current_value = current_period[field]
+        previous_value = previous_period[field]
+        var_value = calculate_var_percentage(current_value, previous_value)
+
+        # Skip rows with zero values for better readability
+        if current_value == 0.0 and previous_value == 0.0:
+            continue  # Skip printing rows with zero values
+
+        # Format values for printing
+        current_value_str = format_value(current_value)
+        previous_value_str = format_value(previous_value)
+        var_value_str = format_value(var_value)
+
+        # Check if the row needs a green background
+        if row_labels[i] in green_rows:
+            pdf.set_font("Arial", 'B', 12)
+            pdf.set_fill_color(0, 255, 0)  # Green background
+            fill = True
+        else:
+            pdf.set_font("Arial", '', 12)
+            fill = False
+
+        # Print row label, values, and VAR %
+        pdf.cell(60, 10, row_labels[i], 1, fill=fill)
+        pdf.cell(40, 10, current_value_str, 1, fill=fill)
+        pdf.cell(40, 10, previous_value_str, 1, fill=fill)
+        pdf.cell(40, 10, var_value_str, 1, fill=fill)
+        pdf.ln()
+
+    # Output the PDF to a file
+    pdf.output("Income_Statement_Report.pdf")
