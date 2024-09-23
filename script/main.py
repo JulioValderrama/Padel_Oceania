@@ -11,7 +11,7 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
 # Inventory DataFrame
-df_inventory = pd.DataFrame(columns=['sku','batch','quantity','unit_price','total_transaction','ean','asin','supplier','total_cogs'])
+df_inventory = pd.DataFrame(columns=['date','sku','batch','quantity','unit_price','total_transaction','ean','asin','supplier','total_cogs'])
 
 # Financial DataFrames for future usage
 df_income_statement = pd.DataFrame(columns=['date','total_revenue','total_cogs','total_operational_expenses', 'gross_margin','operational_margin','taxes','net_profit'])
@@ -48,6 +48,7 @@ def add_inventory(expenses_df):   #FIFO
             unit_price = row['unit_price'] + total_additional_costs / total_quantity_batch
 
             inventory_row = {
+                'date': row['date'],
                 'sku': row['sku'],
                 'batch': row['batch'],
                 'quantity': row['quantity'],
@@ -87,6 +88,27 @@ def update_inventory(sku, quantity_sold):
             df_inventory.at[index, 'quantity'] -= remaining_quantity
             remaining_quantity = 0
 
+def update_inventory_refunded(income_df, inventory_df, order_id):
+
+    df_inventory = inventory_df
+
+    for index, row in income_df.iterrows():
+
+        # Looking for rows with same order_id to change payment_status to REFUNDED
+        if (row['order_id'] == order_id) and (row['payment_status'] == 'completed'):
+            income_df.at[index, 'payment_status'] = 'REFUNDED'
+            sku = income_df.at[index, 'sku']
+            date = income_df.at[index, 'date']
+            quantity = income_df.at[index, 'quantity']
+
+            for index, row in df_inventory.iterrows():
+                if (row['sku'] == sku) and (row['date'] <= date) and (quantity > 0):
+                    df_inventory.at[index, 'quantity'] += quantity
+                    quantity -= quantity
+    
+    
+    return income_df, df_inventory
+
 # Function to calculate the COGS
 def calculate_cogs(sku, quantity_sold):
     cogs = 0
@@ -109,6 +131,7 @@ def calculate_cogs(sku, quantity_sold):
     
     return cogs
 
+# Function to read Amazon.csv and update Expenses for OPERATIONAL EXPENSES
 def reading_amazon_csv_to_expenses(expenses_df):
 
     inbound_transportation_charge = 0
@@ -140,7 +163,6 @@ def reading_amazon_csv_to_expenses(expenses_df):
             current_expense_id += 1
 
         if row['Product Details'] == 'FBA storage fee':
-            inbound_transportation_charge += row['Total (AUD)']
 
             expenses_df.loc[len(expenses_df)] = {
                 'expense_entry_id': current_expense_id,
@@ -155,7 +177,6 @@ def reading_amazon_csv_to_expenses(expenses_df):
             current_expense_id += 1
 
         if row['Product Details'] == 'FBA Return Fee':
-            inbound_transportation_charge += row['Total (AUD)']
 
             expenses_df.loc[len(expenses_df)] = {
                 'expense_entry_id': current_expense_id,
@@ -171,15 +192,108 @@ def reading_amazon_csv_to_expenses(expenses_df):
 
     return expenses_df
 
+# Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon
 def updating_payment_status(income_df, order_id):
 
     for index, row in income_df.iterrows():
-        
+
+        # Looking for rows with PENDING status and changing it to COMPLETED
         if (row['order_id'] == order_id) and (row['payment_status'] == 'pending'):
             income_df.at[index, 'payment_status'] = 'completed'
     
     
     return income_df
+
+# Function to update inventory by reducing the quantity when faulty items are RETURNED from Amazon
+def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
+
+    quantity_remaining = quantity_to_reduce
+
+    # Find the SKU in inventory and reduce the quantity (FIFO logic can be applied if needed)
+    for index, row in inventory_df.iterrows():
+        if (row['sku'] == sku) and (quantity_remaining > 0):
+            print(inventory_df.at[index, 'quantity'])
+            inventory_df.at[index, 'quantity'] -= quantity_to_reduce
+            print(inventory_df.at[index, 'quantity'])
+            quantity_remaining -= quantity_to_reduce
+    
+    return inventory_df
+
+# Function to go through Amazon.csv and UPDATE Income DataFrame for registering other TYPES OF INCOMES from Amazon like repayment or FBA Inventory Reimbursement
+def reading_amazon_csv_to_income(income_df, inventory_df):
+
+    df_amazon = pd.read_csv('data/Amazon.csv')
+    df_amazon = convert_date(df_amazon)
+
+    current_income_id = len(income_df) + 1
+
+    for index, row in df_amazon.iterrows():
+
+        # Looking for Transaction Type - Order Payment for registering sales
+        if row['Transaction type'] == 'Paid to Amazon | Seller repayment':
+            income_df.loc[len(income_df)] = {
+                'order_entry_id': current_income_id,
+                'income_type': 'Amazon Repayment',
+                'date': row['date'],
+                'channel': 'Amazon',
+                'quantity': 1,
+                'unit_price': row['Total (AUD)'],
+                'total_transaction': row['Total (AUD)'],
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']
+            }
+
+            current_income_id += 1
+        
+        # Looking for Transaction Type - Other - Reimbursement - 
+        if row['Product Details'] == 'FBA Inventory Reimbursement':
+
+            sku = int(row['Order ID'])
+
+            # Updating the Inventory to remove the FAULTY ITEMS FROM INVENTORY
+            inventory_df = update_inventory_after_fault(sku, 1, inventory_df)
+            print('Order ID = SKU', row['Order ID'])
+
+            income_df.loc[len(income_df)] = {
+                'order_entry_id': current_income_id,
+                'order_id': row['Order ID'],
+                'income_type': 'Amazon Repayment for faulty Item',
+                'date': row['date'],
+                'channel': 'Amazon',
+                'quantity': 1,
+                'unit_price': row['Total (AUD)'],
+                'total_transaction': row['Total (AUD)'],
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']
+            }
+
+            current_income_id += 1
+
+        # Looking for Transaction Type - REFUNDS - and making a sale for the same ORDER_ID in negative and updating the inventory
+        if row['Transaction type'] == 'Refund':
+
+            # Look in income_df for order_id and change the payment_status to "Refunded"
+            income_df, inventory_df = update_inventory_refunded(income_df, inventory_df, row['Order ID'])
+
+            income_df.loc[len(income_df)] = {
+                'order_entry_id': current_income_id,
+                'order_id': row['Order ID'],
+                'income_type': 'Refund',
+                'date': row['date'],
+                'channel': 'Amazon',
+                'quantity': 1,
+                'unit_price': row['Total (AUD)'],
+                'total_transaction': row['Total (AUD)'],
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']
+            }
+
+            current_income_id += 1
+
+    return income_df, inventory_df
 
 
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
@@ -258,4 +372,7 @@ print(f"Total Revenue: {result['total_revenue']}, Total COGS: {result['cogs']}, 
 
 df_income = updating_payment_status(df_income, '249-4824839-9495848')
 
-print(df_income)
+df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
+
+df_income.to_csv('resultInc.csv', index=False)
+df_inventory.to_csv('resultInven.csv', index=False)
