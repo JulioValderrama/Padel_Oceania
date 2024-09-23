@@ -1,6 +1,6 @@
 expense_entry_id,expense_id,expense_type,sku,batch,unit_price,quantity,item,channel,ean,asin,total_transaction,payment_type,payment_status,date,description
 1,EXP001,purchase_inventory,162593,1,34.20,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,684.06,cash,completed,23/04/2024,Pack Joma Master Negro Turquesa Flour x 10
-2,EXP001,purchase_inventory,134487,1,5.13,10,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,51.27,cash,completed,23/04/2024,Bullpadel Indiga Control 2022
+2,EXP001,purchase_inventory,134487,1,45.13,10,Bullpadel Indiga Control 2022,Tienda Padel Point,8445402125173,B09QGWRT7J,451.27,cash,completed,23/04/2024,Bullpadel Indiga Control 2022
 3,EXP001,purchase_inventory,141108,1,46.45,10,Dunlop Speed Elite Unisex Padel Racket - Orange,Tienda Padel Point,45566303493,,464.51,cash,completed,23/04/2024,Dunlop Speed Elite Unisex Padel Racket - Orange
 4,EXP001,shipping_supplier,,1,124.16,1,Shipping,Tienda Padel Point,,,124.16,cash,completed,23/04/2024,Shipping
 5,EXP002,import_taxes,,1,278.57,1,Import Duties taxes ,UPS,,,278.57,cash,completed,24/04/2024,Import Duties taxes 

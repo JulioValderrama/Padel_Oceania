@@ -24,7 +24,7 @@ def create_comparative_table(current_period, previous_period, current_period_lab
     var_percentage = [format_value(calculate_var_percentage(current_period[field], previous_period[field])) for field in fields]
 
     # Create the table data
-    table_data = np.array([current_values, previous_values, var_percentage]).T
+    table_data = np.array([previous_values, current_values, var_percentage]).T
 
     # Create the figure and axis
     fig, ax = plt.subplots(figsize=(8, 5))  # Set the figure size for better readability
@@ -33,7 +33,7 @@ def create_comparative_table(current_period, previous_period, current_period_lab
 
     # Create the table
     table = ax.table(cellText=table_data,
-                     colLabels=[f'Current Period: {current_period_label}', f'Previous Period: {previous_period_label}', 'VAR %'],
+                     colLabels=[ f'Previous Period: {previous_period_label}', f'Current Period: {current_period_label}' ,'VAR %'],
                      rowLabels=row_labels,
                      loc='center',
                      cellLoc='center',  # Center-align text in the cells
@@ -87,13 +87,13 @@ def export_to_pdf(current_period, previous_period, current_period_label, previou
     pdf.set_font("Arial", 'B', 12)
     
     pdf.cell(60, 10, 'Item', 1, fill=True, align='C')
-    pdf.cell(50, 10, f'Period: {current_period_label}', 1, fill=True, align='C')
     pdf.cell(50, 10, f'Period: {previous_period_label}', 1, fill=True, align='C')
+    pdf.cell(50, 10, f'Period: {current_period_label}', 1, fill=True, align='C')
     pdf.cell(30, 10, 'VAR %', 1, fill=True, align='C')
     pdf.ln()
 
     # Set up the green background for specific rows
-    green_rows = ['Gross Margin', 'Operational Margin', 'Net Profit']
+    green_rows = ['Gross Margin %', 'Operational Margin', 'Net Profit %']
 
     # Define the fields you want to compare
     fields = ['total_revenue', 'cogs', 'gross_margin', 'gross_margin_%', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit', 'net_profit_%']
@@ -129,8 +129,8 @@ def export_to_pdf(current_period, previous_period, current_period_label, previou
 
         # Print row label, values, and VAR %
         pdf.cell(60, 10, row_labels[i], 1, fill=True)
-        pdf.cell(50, 10, current_value_str, 1, fill=True)
         pdf.cell(50, 10, previous_value_str, 1, fill=True)
+        pdf.cell(50, 10, current_value_str, 1, fill=True)
         pdf.cell(30, 10, var_value_str, 1, fill=True)
         pdf.ln()
 

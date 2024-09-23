@@ -7,7 +7,7 @@ order_entry_id,order_id,income_type,date,sku,channel,quantity,amazon_fee,amazon_
 6,,Sales,2024-05-19,134487.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Bullpadel Indiga Control
 7,,Sales,2024-05-21,134487.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Bullpadel Indiga Control
 8,,Sales,2024-05-25,141108.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Dunlop Speed Elite
-9,249-7731852-6688660,Sales,2024-05-26,162593.0,Amazon Sales,1,10.73,1.09,1.62,13.44,-12.35,-12.35,cash,REFUNDED,1º Batch Sale Joma Master Negro Turquesa
+9,249-7731852-6688660,Sales,2024-05-26,162593.0,Amazon Sales,1,10.73,1.09,1.62,13.44,75.0,75.0,cash,REFUNDED,1º Batch Sale Joma Master Negro Turquesa
 10,250-7515166-9991003,Sales,2024-05-29,162593.0,Amazon Sales,1,10.73,1.09,10.2,22.02,75.0,75.0,cash,completed,1º Batch Sale Joma Master Negro Turquesa
 11,250-4786702-5029459,Sales,2024-05-30,134487.0,Amazon Sales,1,14.3,1.09,13.54,28.93,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
 12,,Sales,2024-06-03,141108.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Dunlop Speed Elite
