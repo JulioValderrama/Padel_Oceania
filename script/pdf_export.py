@@ -13,7 +13,7 @@ def format_value(value):
     return f'{float(value):,.2f}'  # Ensure we restrict to 2 decimal places
 
 # Function to create a comparative table using matplotlib (optional visualization)
-def create_comparative_table(current_period, previous_period):
+def create_comparative_table(current_period, previous_period, current_period_label, previous_period_label):
     # Define the fields you want to compare
     fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
     row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
@@ -31,7 +31,7 @@ def create_comparative_table(current_period, previous_period):
     ax.axis('tight')
     ax.axis('off')
     ax.table(cellText=table_data,
-             colLabels=['Current Period', 'Previous Period', 'VAR %'],
+             colLabels=[f'Current Period: {current_period_label}', f'Previous Period: {previous_period_label}', 'VAR %'],
              rowLabels=row_labels,
              loc='center')
 
@@ -42,20 +42,23 @@ def create_comparative_table(current_period, previous_period):
 def export_to_pdf(current_period, previous_period, current_period_label, previous_period_label):
     pdf = FPDF()
     pdf.add_page()
+    print('AAAAAAAAAAAAAAAAAAAAAAA', current_period)
 
-    # Title
-    pdf.set_font("Arial", 'B', 16)
-    pdf.cell(200, 10, "Profit and Loss Statement", ln=True, align='C')
+    # Title section
+    pdf.set_font("Arial", 'B', 18)
+    pdf.set_text_color(0, 102, 204)  # Blue title text
+    pdf.cell(200, 15, "Profit and Loss Statement", ln=True, align='C')
+    pdf.ln(10)
 
-    # Period information (current and previous period labels)
-    pdf.ln(10)  # Add some space after the title
+    # Period information with custom background
+    pdf.set_fill_color(240, 240, 240)  # Light grey background for headers
+    pdf.set_text_color(0)  # Reset text color to black
     pdf.set_font("Arial", 'B', 12)
     
-    # Print period labels with correct formatting
-    pdf.cell(60, 10, 'Item', 1)
-    pdf.cell(40, 10, f'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA{current_period_label}', 1)
-    pdf.cell(40, 10, f'{previous_period_label}', 1)
-    pdf.cell(40, 10, 'VAR %', 1)
+    pdf.cell(60, 10, 'Item', 1, fill=True, align='C')
+    pdf.cell(50, 10, f'Period: {current_period_label}', 1, fill=True, align='C')
+    pdf.cell(50, 10, f'Period: {previous_period_label}', 1, fill=True, align='C')
+    pdf.cell(30, 10, 'VAR %', 1, fill=True, align='C')
     pdf.ln()
 
     # Set up the green background for specific rows
@@ -65,36 +68,40 @@ def export_to_pdf(current_period, previous_period, current_period_label, previou
     fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
     row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
 
+    # Alternating row background color
+    row_bg_color = [255, 255, 255]  # Default white
+    alternate_bg_color = [245, 245, 245]  # Light grey
+
     # Loop through fields and print them
     for i, field in enumerate(fields):
         current_value = current_period[field]
         previous_value = previous_period[field]
         var_value = calculate_var_percentage(current_value, previous_value)
 
-        # Skip rows with zero values for better readability
-        if current_value == 0.0 and previous_value == 0.0:
-            continue  # Skip printing rows with zero values
-
-        # Format values for printing
+        # Format values for printing (restrict to 2 decimal places)
         current_value_str = format_value(current_value)
         previous_value_str = format_value(previous_value)
         var_value_str = format_value(var_value)
 
-        # Check if the row needs a green background
+        # Alternate row colors
+        fill_color = alternate_bg_color if i % 2 == 1 else row_bg_color
+        pdf.set_fill_color(*fill_color)
+
+        # Check if the row needs a green background (highlight important rows)
         if row_labels[i] in green_rows:
             pdf.set_font("Arial", 'B', 12)
-            pdf.set_fill_color(0, 255, 0)  # Green background
+            pdf.set_fill_color(144, 238, 144)  # Green background (light green)
             fill = True
         else:
             pdf.set_font("Arial", '', 12)
             fill = False
 
         # Print row label, values, and VAR %
-        pdf.cell(60, 10, row_labels[i], 1, fill=fill)
-        pdf.cell(40, 10, current_value_str, 1, fill=fill)
-        pdf.cell(40, 10, previous_value_str, 1, fill=fill)
-        pdf.cell(40, 10, var_value_str, 1, fill=fill)
+        pdf.cell(60, 10, row_labels[i], 1, fill=True)
+        pdf.cell(50, 10, current_value_str, 1, fill=True)
+        pdf.cell(50, 10, previous_value_str, 1, fill=True)
+        pdf.cell(30, 10, var_value_str, 1, fill=True)
         pdf.ln()
 
     # Output the PDF to a file
-    pdf.output("Income_Statement_Report.pdf")
+    pdf.output("Income_Statement_Report_Enhanced.pdf")

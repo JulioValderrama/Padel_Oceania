@@ -345,6 +345,9 @@ def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
 
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
 
+def format_value(value):
+    return f'{float(value):,.2f}'  # Ensure we restrict to 2 decimal places
+
 # Income Statement Function
 def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
@@ -378,14 +381,14 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     # Return a dictionary with the calculated values
     income_statement = {
-        'total_revenue': total_revenue,
-        'cogs': cogs,
-        'gross_margin': gross_margin,
-        'other_income': total_other_income,
-        'total_operational_expenses': total_operational_expenses,
-        'operational_margin': operational_margin,
-        'taxes': taxes,
-        'net_profit': net_profit
+        'total_revenue': format_value(total_revenue),
+        'cogs': format_value(cogs),
+        'gross_margin': format_value(gross_margin),
+        'other_income': format_value(total_other_income),
+        'total_operational_expenses': format_value(total_operational_expenses),
+        'operational_margin': format_value(operational_margin),
+        'taxes': format_value(taxes),
+        'net_profit': format_value(net_profit)
     }
 
         # Iterate through the dictionary and print each key and its corresponding value
@@ -448,12 +451,10 @@ df_expenses = reading_amazon_csv_to_expenses(df_expenses)
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
 # Generate comparative income statement for Q2 2024
-current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024, 3)
-print('CURRENT PREVIOUS', current_period_label)
-print('PREVIOUS', previous_period_label)
+current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024, month=6)
 
 # Create the table and export to PDF (period labels generated automatically)
-create_comparative_table(current_period, previous_period)
+create_comparative_table(current_period, previous_period, current_period_label, previous_period_label)
 export_to_pdf(current_period, previous_period, current_period_label, previous_period_label)
 
 df_income.to_csv('resultInc.csv', index=False)
