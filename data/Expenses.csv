@@ -4,7 +4,7 @@ expense_entry_id,expense_id,expense_type,sku,batch,unit_price,quantity,item,chan
 3,EXP001,purchase_inventory,141108,1,46.45,10,Dunlop Speed Elite Unisex Padel Racket - Orange,Tienda Padel Point,45566303493,,464.51,cash,completed,23/04/2024,Dunlop Speed Elite Unisex Padel Racket - Orange
 4,EXP001,shipping_supplier,,1,124.16,1,Shipping,Tienda Padel Point,,,124.16,cash,completed,23/04/2024,Shipping
 5,EXP002,import_taxes,,1,278.57,1,Import Duties taxes ,UPS,,,278.57,cash,completed,24/04/2024,Import Duties taxes 
-6,EXP003,Administrative Expense,,,19.46,,Packaging to ship to Amazon,Office Works,,,0.00,cash,completed,10/05/2024,Packaging to ship to Amazon
+6,EXP003,Administrative Expense,,,19.46,,Packaging to ship to Amazon,Office Works,,,19.46,cash,completed,10/05/2024,Packaging to ship to Amazon
 7,EXP004,purchase_inventory,162593,2,32.64,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,652.90,cash,completed,13/06/2024,Pack Joma Master Negro Turquesa Flour x 10
 8,EXP004,purchase_inventory,148027,2,65.29,4,Adidas RX 2000 Light 2023,Tienda Padel Point,8436548247775,B0BPN37VVM,261.15,cash,completed,13/06/2024,Adidas RX 2000 Light 2023
 9,EXP004,purchase_inventory,163016,2,78.35,10,Adidas Drive 3.3 Blue 2024,Tienda Padel Point,8436548249021,B0CNWGQ5DC,783.50,cash,completed,13/06/2024,Adidas Drive 3.3 Blue 2024

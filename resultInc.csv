@@ -87,8 +87,8 @@ order_entry_id,order_id,income_type,date,sku,channel,quantity,amazon_fee,amazon_
 86,249-4967784-0319847,Sales,2024-09-03,163022.0,Amazon Sales,1,17.89,1.09,9.83,28.81,130.0,130.0,cash,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
 87,,Sales,2024-09-03,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
 88,503-1985816-6728601,Sales,2024-09-04,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-89,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,cash,completed,2º Batch Sale Bullpadel Raider Power
-90,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,cash,completed,2º Batch Sale Bullpadel Raider Power
+89,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,cash,COMPLETEEEEEED,2º Batch Sale Bullpadel Raider Power
+90,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,cash,COMPLETEEEEEED,2º Batch Sale Bullpadel Raider Power
 91,503-4667779-4969425,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,cash,completed,2º Batch Sale Joma Master Negro Turquesa
 92,249-9041422-5781436,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,cash,completed,2º Batch Sale Joma Master Negro Turquesa
 93,250-3854065-1544602,Refund,2024-09-04,,Amazon,1,,,,,-146.61,-146.61,cash,completed,"Padel Racket Joma Master, high Professio..."

@@ -16,6 +16,17 @@ df_inventory = pd.DataFrame(columns=['date','sku','batch','quantity','unit_price
 # Financial DataFrames for future usage
 df_income_statement = pd.DataFrame(columns=['date','total_revenue','total_cogs','total_operational_expenses', 'gross_margin','operational_margin','taxes','net_profit'])
 
+other_income = [
+    'Amazon Repayment',
+    'Amazon Repayment for faulty Item'
+]
+
+operational_expenses = [
+    'Administrative Expense',
+    'FBA storage fee',
+    'Inbound Transportation Charge',
+    'FBA Return Fee'
+]
 
 # ---------------------------------READING, CLEANIGN AND UPLOADING DATA FROM CSV -------------------------------------
 
@@ -123,20 +134,16 @@ def calculate_cogs(sku, quantity_sold):
         available_quantity = row['quantity']
         
         if available_quantity <= remaining_quantity:
-            cogs += available_quantity * row['unit_price']
+            cogs += available_quantity * row['total_cogs']
             remaining_quantity -= available_quantity
         else:
-            cogs += remaining_quantity * row['unit_price']
+            cogs += remaining_quantity * row['total_cogs']
             remaining_quantity = 0
     
     return cogs
 
 # Function to read Amazon.csv and update Expenses for OPERATIONAL EXPENSES
 def reading_amazon_csv_to_expenses(expenses_df):
-
-    inbound_transportation_charge = 0
-    fba_storage_fee = 0
-    fba_return_fee = 0
     
     df_amazon = pd.read_csv('data/Amazon.csv')
     df_amazon = convert_date(df_amazon)
@@ -148,15 +155,14 @@ def reading_amazon_csv_to_expenses(expenses_df):
     for index, row in df_amazon.iterrows():
 
         if row['Product Details'] == 'Inbound Transportation Charge':
-            inbound_transportation_charge += row['Total (AUD)']
 
             expenses_df.loc[len(expenses_df)] = {
                 'expense_entry_id': current_expense_id,
                 'date': row['date'],  # Date from Amazon CSV
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
-                'unit_price': row['Total (AUD)'],  # Total (AUD) mapped to unit_price
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
-                'total_transaction': row['Total (AUD)'],  # Total (AUD) for total_transaction
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'description': row['Product Details']  # Description similar to expense_type
             }
 
@@ -168,9 +174,9 @@ def reading_amazon_csv_to_expenses(expenses_df):
                 'expense_entry_id': current_expense_id,
                 'date': row['date'],  # Date from Amazon CSV
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
-                'unit_price': row['Total (AUD)'],  # Total (AUD) mapped to unit_price
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
-                'total_transaction': row['Total (AUD)'],  # Total (AUD) for total_transaction
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'description': row['Product Details']  # Description similar to expense_type
             }
 
@@ -182,42 +188,15 @@ def reading_amazon_csv_to_expenses(expenses_df):
                 'expense_entry_id': current_expense_id,
                 'date': row['date'],  # Date from Amazon CSV
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
-                'unit_price': row['Total (AUD)'],  # Total (AUD) mapped to unit_price
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
-                'total_transaction': row['Total (AUD)'],  # Total (AUD) for total_transaction
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'description': row['Product Details']  # Description similar to expense_type
             }
 
             current_expense_id += 1
 
     return expenses_df
-
-# Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon
-def updating_payment_status(income_df, order_id):
-
-    for index, row in income_df.iterrows():
-
-        # Looking for rows with PENDING status and changing it to COMPLETED
-        if (row['order_id'] == order_id) and (row['payment_status'] == 'pending'):
-            income_df.at[index, 'payment_status'] = 'completed'
-    
-    
-    return income_df
-
-# Function to update inventory by reducing the quantity when faulty items are RETURNED from Amazon
-def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
-
-    quantity_remaining = quantity_to_reduce
-
-    # Find the SKU in inventory and reduce the quantity (FIFO logic can be applied if needed)
-    for index, row in inventory_df.iterrows():
-        if (row['sku'] == sku) and (quantity_remaining > 0):
-            print(inventory_df.at[index, 'quantity'])
-            inventory_df.at[index, 'quantity'] -= quantity_to_reduce
-            print(inventory_df.at[index, 'quantity'])
-            quantity_remaining -= quantity_to_reduce
-    
-    return inventory_df
 
 # Function to go through Amazon.csv and UPDATE Income DataFrame for registering other TYPES OF INCOMES from Amazon like repayment or FBA Inventory Reimbursement
 def reading_amazon_csv_to_income(income_df, inventory_df):
@@ -228,6 +207,10 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
     current_income_id = len(income_df) + 1
 
     for index, row in df_amazon.iterrows():
+
+        # Going through Sales and updating payment_status from Pending to Completed for those that Amazon paid, checking by Order Id
+        if row['Transaction type'] == 'Order payment':
+            income_df = updating_payment_status(income_df, row['Order ID'])
 
         # Looking for Transaction Type - Order Payment for registering sales
         if row['Transaction type'] == 'Paid to Amazon | Seller repayment':
@@ -253,7 +236,6 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
 
             # Updating the Inventory to remove the FAULTY ITEMS FROM INVENTORY
             inventory_df = update_inventory_after_fault(sku, 1, inventory_df)
-            print('Order ID = SKU', row['Order ID'])
 
             income_df.loc[len(income_df)] = {
                 'order_entry_id': current_income_id,
@@ -295,26 +277,86 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
 
     return income_df, inventory_df
 
+# Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon
+def updating_payment_status(income_df, order_id):
+
+    for index, row in income_df.iterrows():
+
+        # Looking for rows with PENDING status and changing it to COMPLETED
+        if (row['order_id'] == order_id) and (row['payment_status'] == 'pending'):
+            income_df.at[index, 'payment_status'] = 'COMPLETEEEEEED'
+    
+    
+    return income_df
+
+# Function to update inventory by reducing the quantity when faulty items are RETURNED from Amazon
+def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
+
+    quantity_remaining = quantity_to_reduce
+
+    # Find the SKU in inventory and reduce the quantity (FIFO logic can be applied if needed)
+    for index, row in inventory_df.iterrows():
+        if (row['sku'] == sku) and (quantity_remaining > 0):
+            inventory_df.at[index, 'quantity'] -= quantity_to_reduce
+            quantity_remaining -= quantity_to_reduce
+    
+    return inventory_df
+
+def calculating_operational_expenses(df_expenses, year, quarter=None, month=None):
+
+    # Filter data by year, quarter, or month
+    df_expenses_filtered = filtering_by_year_quarter_month(df_expenses, year, quarter, month)
+
+    total_operational_expenses = 0
+
+    # Iterate through expenses and calculate totals
+    for index, row in df_expenses_filtered.iterrows():
+        if row['expense_type'] in operational_expenses:
+            total_operational_expenses += row['total_transaction']
+    
+    return total_operational_expenses
+
+def calculating_other_income(df_income, year, quarter=None, month=None):
+
+    # Filter data by year, quarter, or month
+    df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
+
+    other_income = 0
+
+    for index, row in df_income_filtered.iterrows():
+        if row['income_type'] in other_income:
+            other_income += row['total_transaction']
+
+    print('OTHER INCOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', other_income)
+
+def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
+
+    # Filter data by year, quarter, or month
+    df_filtered = df[df['date'].dt.year == year]
+
+    if quarter is not None:
+        df_filtered = df_filtered[df_filtered['date'].dt.quarter == quarter]
+    
+    if month is not None:
+        df_filtered = df_filtered[df_filtered['date'].dt.month == month]
+
+    return df_filtered
 
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
 
 # Income Statement Function
-def income_statement(df_income, year, quarter=None, month=None):
+def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
-    df_filtered = df_income[df_income['date'].dt.year == year]
-
-    if quarter:
-        df_filtered = df_filtered[df_filtered['date'].dt.quarter == quarter]
-    elif month:
-        df_filtered = df_filtered[df_filtered['date'].dt.month == month]
+    df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
 
     total_revenue = 0
     cogs = 0
-    total_operational_expenses = 0
+    total_operational_expenses = calculating_operational_expenses(df_expenses, year, quarter, month)
+    other_income = 0
 
     # Iterate through sales and calculate totals
-    for _, sale in df_filtered.iterrows():
+    for _, sale in df_income_filtered.iterrows():
         sku = sale['sku']
         quantity_sold = sale['quantity']
         unit_price = sale['unit_price']
@@ -326,7 +368,7 @@ def income_statement(df_income, year, quarter=None, month=None):
         # Update the inventory after calculating COGS
         update_inventory(sku, quantity_sold)  # Now correctly passing the arguments
         
-        total_operational_expenses += sale['total_amazon_cost'] if not pd.isna(sale['total_amazon_cost']) else 0
+        total_operational_expenses += sale['total_amazon_cost'] if not pd.isna(sale['total_amazon_cost']) else 0        
 
     gross_margin = total_revenue - cogs
     operational_margin = gross_margin - total_operational_expenses
@@ -357,22 +399,16 @@ add_inventory(df_expenses)
 
 # Updating the Expenses with OPERATIONAL EXPENSES from Amazon.csv
 df_expenses = reading_amazon_csv_to_expenses(df_expenses)
+df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
+
 
 # Populate the inventory with purchase data
-result = income_statement(df_income,2024)
+result = income_statement(df_income, df_expenses, 2024)
 print(result)
 print(f"Total Revenue: {result['total_revenue']}, Total COGS: {result['cogs']}, Operational Expense: {result['total_operational_expenses']}, Net Income: {result['net_profit']}")
 
-
-# # Export the DataFrame to a CSV file
-# df_expenses.to_csv('1exported_expenses.csv', index=False)
-
-
-#df_income = updating_payment_status (df_income, '249-4824839-9495848')
-
 df_income = updating_payment_status(df_income, '249-4824839-9495848')
-
-df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
+df_expenses.to_csv('resultExp.csv', index=False)
