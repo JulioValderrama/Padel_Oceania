@@ -12,11 +12,11 @@ def calculate_var_percentage(current, previous):
 def format_value(value):
     return f'{float(value):,.2f}'  # Ensure we restrict to 2 decimal places
 
-# Function to create a comparative table using matplotlib (optional visualization)
+# Function to create a comparative table using matplotlib
 def create_comparative_table(current_period, previous_period, current_period_label, previous_period_label):
     # Define the fields you want to compare
-    fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
-    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
+    fields = ['total_revenue', 'cogs', 'gross_margin', 'gross_margin_%', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit', 'net_profit_%']
+    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Gross Margin %', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit', 'Net Profit %']
 
     # Extract and format values from the dictionaries
     current_values = [format_value(current_period[field]) for field in fields]
@@ -26,14 +26,46 @@ def create_comparative_table(current_period, previous_period, current_period_lab
     # Create the table data
     table_data = np.array([current_values, previous_values, var_percentage]).T
 
-    # Create the table plot using matplotlib
-    fig, ax = plt.subplots()
+    # Create the figure and axis
+    fig, ax = plt.subplots(figsize=(8, 5))  # Set the figure size for better readability
     ax.axis('tight')
     ax.axis('off')
-    ax.table(cellText=table_data,
-             colLabels=[f'Current Period: {current_period_label}', f'Previous Period: {previous_period_label}', 'VAR %'],
-             rowLabels=row_labels,
-             loc='center')
+
+    # Create the table
+    table = ax.table(cellText=table_data,
+                     colLabels=[f'Current Period: {current_period_label}', f'Previous Period: {previous_period_label}', 'VAR %'],
+                     rowLabels=row_labels,
+                     loc='center',
+                     cellLoc='center',  # Center-align text in the cells
+                     colColours=['#D3D3D3'] * 3)  # Light grey for column headers
+
+    # Set font size and apply alternating row colors
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+
+    # Set alternating row colors and bold key metrics
+    green_rows = ['Gross Margin %', 'Operational Margin', 'Net Profit %']
+    for i, row_label in enumerate(row_labels):
+        if i % 2 == 0:
+            row_color = '#F5F5F5'  # Light grey for alternating rows
+        else:
+            row_color = '#FFFFFF'  # White background for other rows
+
+        # Apply green background for important rows
+        if row_label in green_rows:
+            row_color = '#90EE90'  # Light green background for key metrics
+
+        # Apply the background color to the row
+        for col in range(3):  # Apply to all 3 columns (current, previous, VAR %)
+            table[(i + 1, col)].set_facecolor(row_color)
+
+        # Bold font for key metrics
+        if row_label in green_rows:
+            for col in range(3):
+                table[(i + 1, col)].set_text_props(weight='bold')
+
+    # Adjust column width for better readability
+    table.auto_set_column_width([0, 1, 2])
 
     # Show the table
     plt.show()
@@ -64,8 +96,8 @@ def export_to_pdf(current_period, previous_period, current_period_label, previou
     green_rows = ['Gross Margin', 'Operational Margin', 'Net Profit']
 
     # Define the fields you want to compare
-    fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
-    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
+    fields = ['total_revenue', 'cogs', 'gross_margin', 'gross_margin_%', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit', 'net_profit_%']
+    row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Gross Margin %', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit', 'Net Profit %']
 
     # Alternating row background color
     row_bg_color = [255, 255, 255]  # Default white

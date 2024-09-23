@@ -379,16 +379,26 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
     taxes = 0  # Adjust taxes based on your logic
     net_profit = operational_margin - taxes
 
+        # Handle cases where total_revenue is zero to avoid division by zero errors
+    if total_revenue != 0:
+        gross_margin_percentage = (gross_margin / total_revenue) * 100
+        net_profit_percentage = (net_profit / total_revenue) * 100
+    else:
+        gross_margin_percentage = 0  # or None, based on your preference
+        net_profit_percentage = 0  # or None
+
     # Return a dictionary with the calculated values
     income_statement = {
         'total_revenue': total_revenue,
         'cogs': cogs,
         'gross_margin': gross_margin,
+        'gross_margin_%': gross_margin_percentage,
         'other_income': total_other_income,
         'total_operational_expenses': total_operational_expenses,
         'operational_margin': operational_margin,
         'taxes': taxes,
-        'net_profit': net_profit
+        'net_profit': net_profit,
+        'net_profit_%': net_profit_percentage
     }
 
         # Iterate through the dictionary and print each key and its corresponding value
@@ -451,7 +461,7 @@ df_expenses = reading_amazon_csv_to_expenses(df_expenses)
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
 # Generate comparative income statement for Q2 2024
-current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024, month=6)
+current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024)
 
 # Create the table and export to PDF (period labels generated automatically)
 create_comparative_table(current_period, previous_period, current_period_label, previous_period_label)
@@ -460,3 +470,4 @@ export_to_pdf(current_period, previous_period, current_period_label, previous_pe
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
+
