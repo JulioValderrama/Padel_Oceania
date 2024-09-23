@@ -381,14 +381,14 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     # Return a dictionary with the calculated values
     income_statement = {
-        'total_revenue': format_value(total_revenue),
-        'cogs': format_value(cogs),
-        'gross_margin': format_value(gross_margin),
-        'other_income': format_value(total_other_income),
-        'total_operational_expenses': format_value(total_operational_expenses),
-        'operational_margin': format_value(operational_margin),
-        'taxes': format_value(taxes),
-        'net_profit': format_value(net_profit)
+        'total_revenue': total_revenue,
+        'cogs': cogs,
+        'gross_margin': gross_margin,
+        'other_income': total_other_income,
+        'total_operational_expenses': total_operational_expenses,
+        'operational_margin': operational_margin,
+        'taxes': taxes,
+        'net_profit': net_profit
     }
 
         # Iterate through the dictionary and print each key and its corresponding value

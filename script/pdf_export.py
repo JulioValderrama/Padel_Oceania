@@ -18,10 +18,10 @@ def create_comparative_table(current_period, previous_period, current_period_lab
     fields = ['total_revenue', 'cogs', 'gross_margin', 'other_income', 'total_operational_expenses', 'operational_margin', 'taxes', 'net_profit']
     row_labels = ['Total Revenue', 'COGS', 'Gross Margin', 'Other Income', 'Operational Expenses', 'Operational Margin', 'Taxes', 'Net Profit']
 
-    # Extract values from the dictionaries
-    current_values = [current_period[field] for field in fields]
-    previous_values = [previous_period[field] for field in fields]
-    var_percentage = [calculate_var_percentage(current_period[field], previous_period[field]) for field in fields]
+    # Extract and format values from the dictionaries
+    current_values = [format_value(current_period[field]) for field in fields]
+    previous_values = [format_value(previous_period[field]) for field in fields]
+    var_percentage = [format_value(calculate_var_percentage(current_period[field], previous_period[field])) for field in fields]
 
     # Create the table data
     table_data = np.array([current_values, previous_values, var_percentage]).T
@@ -42,7 +42,6 @@ def create_comparative_table(current_period, previous_period, current_period_lab
 def export_to_pdf(current_period, previous_period, current_period_label, previous_period_label):
     pdf = FPDF()
     pdf.add_page()
-    print('AAAAAAAAAAAAAAAAAAAAAAA', current_period)
 
     # Title section
     pdf.set_font("Arial", 'B', 18)
