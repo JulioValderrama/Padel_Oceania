@@ -284,7 +284,7 @@ def updating_payment_status(income_df, order_id):
 
         # Looking for rows with PENDING status and changing it to COMPLETED
         if (row['order_id'] == order_id) and (row['payment_status'] == 'pending'):
-            income_df.at[index, 'payment_status'] = 'COMPLETEEEEEED'
+            income_df.at[index, 'payment_status'] = 'completed'
     
     
     return income_df
@@ -326,8 +326,6 @@ def calculating_other_income(df_income, year, quarter=None, month=None):
     for index, row in df_income_filtered.iterrows():
         if row['income_type'] in other_income:
             total_other_income += row['total_transaction']
-
-    print('OTHER INCOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', total_other_income)
 
     return total_other_income
 
@@ -378,7 +376,7 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
     net_profit = operational_margin - taxes
 
     # Return a dictionary with the calculated values
-    return {
+    income_statement = {
         'total_revenue': total_revenue,
         'cogs': cogs,
         'gross_margin': gross_margin,
@@ -389,6 +387,39 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
         'net_profit': net_profit
     }
 
+        # Iterate through the dictionary and print each key and its corresponding value
+    for key, value in income_statement.items():
+        print(f"{key}: {value}")
+
+    return income_statement
+
+# Function to calculate the income statement for two periods and compare them
+def generate_comparative_income_statement(df_income, df_expenses, year, quarter=None, month=None):
+    # Calculate the current period's income statement
+    current_period = income_statement(df_income, df_expenses, year, quarter, month)
+    
+    # Automatically get the previous period based on the input
+    if month:
+        # Compare with the previous month in the same year
+        previous_month = month - 1 if month > 1 else 12
+        previous_year = year if month > 1 else year - 1  # Go to the previous year if month is January
+        previous_quarter = None  # No quarter when month is provided
+    elif quarter:
+        # Compare with the previous quarter in the same year
+        previous_quarter = quarter - 1 if quarter > 1 else 4
+        previous_year = year if quarter > 1 else year - 1  # Go to previous year if it's Q1
+        previous_month = None  # No month when quarter is provided
+    else:
+        # Compare the full year with the previous year
+        previous_year = year - 1
+        previous_quarter = None
+        previous_month = None
+
+    # Calculate the previous period's income statement
+    previous_period = income_statement(df_income, df_expenses, previous_year, previous_quarter, previous_month)
+    
+    return current_period, previous_period
+
 
 #  ---------------------------- WORK FLOW --------------------------------------------------------------------------
 
@@ -397,20 +428,17 @@ df_income = convert_date(df_income)
 df_expenses = convert_date(df_expenses)
 df_liabilities = convert_date(df_liabilities)
 
-# Populate the inventory with purchase data
+# Populate the inventory with purchase data from expenses.csv
 add_inventory(df_expenses) 
 
 # Updating the Expenses with OPERATIONAL EXPENSES from Amazon.csv
 df_expenses = reading_amazon_csv_to_expenses(df_expenses)
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
+# Calculating the Income Statement by year, quarter and month if provided with all DataFrames updated
+current_period, previous_period = generate_comparative_income_statement(df_income, df_expenses, 2024, 3)
 
-# Populate the inventory with purchase data
-result = income_statement(df_income, df_expenses, 2024)
-print(result)
-print(f"Total Revenue: {result['total_revenue']}, Total COGS: {result['cogs']}, Operational Expense: {result['total_operational_expenses']}, Net Income: {result['net_profit']}")
-
-df_income = updating_payment_status(df_income, '249-4824839-9495848')
+print(current_period, previous_period)
 
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
