@@ -140,7 +140,7 @@ def calculate_cogs(sku, quantity_sold):
         else:
             cogs += remaining_quantity * row['total_cogs']
             remaining_quantity = 0
-    print(sku, 'unit prce', cogs)
+
     return cogs
 
 # Function to read Amazon.csv and update Expenses for OPERATIONAL EXPENSES
@@ -353,7 +353,6 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
     df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
-    print(df_income_filtered)
 
     total_revenue = 0
     cogs = 0
@@ -401,10 +400,6 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
         'net_profit': net_profit,
         'net_profit_%': net_profit_percentage
     }
-
-        # Iterate through the dictionary and print each key and its corresponding value
-    # for key, value in income_statement.items():
-    #     print(f"{key}: {value}")
 
     return income_statement
 
@@ -471,6 +466,4 @@ export_to_pdf(current_period, previous_period, current_period_label, previous_pe
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
-
-print(df_inventory)
 
