@@ -205,6 +205,7 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
     df_amazon = pd.read_csv('data/Amazon.csv')
     df_amazon = convert_date(df_amazon)
 
+    # Creating variable to generate entry_id according to the lenght of the DataFrame
     current_income_id = len(income_df) + 1
 
     for index, row in df_amazon.iterrows():
@@ -230,7 +231,7 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
 
             current_income_id += 1
         
-        # Looking for Transaction Type - Other - Reimbursement - 
+        # Looking for Transaction Type - Other - Reimbursement - which is a return of a faulty item so we have to remove it from Inventory
         if row['Product Details'] == 'FBA Inventory Reimbursement':
 
             sku = int(row['Order ID'])
@@ -278,7 +279,7 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
 
     return income_df, inventory_df
 
-# Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon
+# Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon in Amazon.csv to Income.csv
 def updating_payment_status(income_df, order_id):
 
     for index, row in income_df.iterrows():
@@ -290,7 +291,7 @@ def updating_payment_status(income_df, order_id):
     
     return income_df
 
-# Function to update inventory by reducing the quantity when faulty items are RETURNED from Amazon
+# Function to update inventory by reducing the quantity when faulty items are RETURNED from Amazon in Amazon.csv to Inventory df
 def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
 
     quantity_remaining = quantity_to_reduce
@@ -303,6 +304,7 @@ def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
     
     return inventory_df
 
+# Function that will calculate Operational Expenses from Expenses (already updated by rreading_amazon_csv_to_expenses(expenses_df))
 def calculating_operational_expenses(df_expenses, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
@@ -317,6 +319,7 @@ def calculating_operational_expenses(df_expenses, year, quarter=None, month=None
     
     return total_operational_expenses
 
+# Function that will calculate Other Income from Income (already updated by reading_amazon_csv_to_income(income_df, inventory_df))
 def calculating_other_income(df_income, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
@@ -330,6 +333,7 @@ def calculating_other_income(df_income, year, quarter=None, month=None):
 
     return total_other_income
 
+# Function that will filter Data Frames according to the Period of time, Year, Quarter or Month that the User provides
 def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
@@ -345,10 +349,11 @@ def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
 
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
 
+# Function to format values with max two decimals
 def format_value(value):
     return f'{float(value):,.2f}'  # Ensure we restrict to 2 decimal places
 
-# Income Statement Function
+# Income Statement Function that will get the Income Statement out of the period the User enters
 def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
@@ -403,7 +408,7 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
 
     return income_statement
 
-# Function to generate period labels dynamically
+# Function to generate period labels dynamically for PDF and Tables printed
 def generate_period_label(year, quarter=None, month=None):
     if month:
         # Convert month number to month name
@@ -454,6 +459,8 @@ add_inventory(df_expenses)
 
 # Updating the Expenses with OPERATIONAL EXPENSES from Amazon.csv
 df_expenses = reading_amazon_csv_to_expenses(df_expenses)
+
+# Updating the
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
 # Generate comparative income statement for Q2 2024
