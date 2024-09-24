@@ -17,11 +17,13 @@ df_inventory = pd.DataFrame(columns=['date','sku','batch','quantity','unit_price
 # Financial DataFrames for future usage
 df_income_statement = pd.DataFrame(columns=['date','total_revenue','total_cogs','total_operational_expenses', 'gross_margin','operational_margin','taxes','net_profit'])
 
+# List of types of Other Incomes
 other_income = [
     'Amazon Repayment',
     'Amazon Repayment for faulty Item'
 ]
 
+# List of types of Operational Expenses
 operational_expenses = [
     'Administrative Expense',
     'FBA storage fee',
