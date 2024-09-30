@@ -1,63 +1,71 @@
-date,Transaction type,Order ID,Product Details,Total product charges,Total promotional rebates,Amazon fees,Other,Total (AUD),,,
-18/09/2024,Order payment,503-4667779-4969425,"Padel Racket Joma Master, high Professio...",89,0,-26.48,0,62.52,,,
-17/09/2024,Order payment,249-4824839-9495848,Bullpadel Raider PWR,198,0,-55.13,0,142.87,,,
-17/09/2024,Order payment,249-9041422-5781436,"Padel Racket Joma Master, high Professio...",89,0,-26.48,0,62.52,,,
-12/09/2024,Order payment,249-4967784-0319847,Drive 3.3 Vintage,130,0,-30.49,0,99.51,,,
-12/09/2024,Order payment,503-1985816-6728601,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-10/09/2024,Order payment,250-3679977-4481405,Bullpadel Raider PWR,99,-7.99,-27.57,7.99,71.43,,,
-10/09/2024,Order payment,503-8109331-5870234,"Padel Racket Joma Master, high Professio...",84,-9.99,-25.76,9.99,58.24,,,-58
-10/09/2024,Order payment,503-1248404-0062268,"Padel Racket Joma Master, high Professio...",84,-7.99,-25.76,7.99,58.24,,,
-08/09/2024,Order payment,503-9109527-9744600,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-08/09/2024,Order payment,249-0012290-7942265,Bullpadel Raider PWR,99,0,-27.57,0,71.43,,,
-07/09/2024,Service Fees,---,FBA storage fee,0,0,0,-4.38,-4.38,,,
-05/09/2024,Order payment,503-6594219-0903852,adidas RX 2000 Light Padel Paddle Blue 3...,125,0,-31.29,0,93.71,,,
-05/09/2024,Order payment,249-8107921-6580608,adidas RX 2000 Light Padel Paddle Blue 3...,125,0,-31.29,0,93.71,,,
-04/09/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-16.47,-16.47,,,
-04/09/2024,Refund,250-3854065-1544602,"Padel Racket Joma Master, high Professio...",-168,0,21.39,0,-146.61,,,
-03/09/2024,Order payment,250-3854065-1544602,"Padel Racket Joma Master, high Professio...",168,0,-51.52,0,116.48,,,
-31/08/2024,Order payment,250-0885619-2819055,"Padel Racket Joma Master, high Professio...",84,-7.99,-25.76,7.99,58.24,,,
-27/08/2024,Order payment,250-8297974-4019006,Bullpadel RAIDER PWR,99,-7.99,-27.57,7.99,71.43,,,
-22/08/2024,Order payment,503-0606708-6568608,Adidas Drive 3.3 Padel Racket,130,-3.99,-32,3.99,98,,,
-22/08/2024,Order payment,250-8405116-0119863,Bullpadel RAIDER PWR,99,0,-27.57,0,71.43,,,
-21/08/2024,Order payment,503-0127524-4596677,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98,,,
-20/08/2024,Order payment,249-4580099-3260655,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-19/08/2024,Order payment,503-8128780-2175028,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98,,,
-16/08/2024,Order payment,250-4739521-0932628,Bullpadel INDIGA CONTROL 2022,99.99,0,-36.04,7.99,71.94,,,
-16/08/2024,Order payment,503-7751955-7428619,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-14/08/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-10.98,-10.98,,,
-13/08/2024,Order payment,250-4378742-0991802,"Padel Racket Joma Master, high Professio...",168,0,-51.52,0,116.48,,,
-11/08/2024,Order payment,249-7263331-3479828,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98,,,
-08/08/2024,Service Fees,---,FBA storage fee,0,0,0,-5.87,-5.87,,,
-05/08/2024,Order payment,503-7286769-5054207,Bullpadel INDIGA CONTROL 2022,99.99,0,-28.05,0,71.94,,,
-02/08/2024,Service Fees,240801WF9,FBA Return Fee,0,0,-4.13,0,-4.13,,,
-28/07/2024,Order payment,249-4949848-4866252,Adidas Drive 3.3 Padel Racket,260,0,-63.78,0,196.22,,,
-26/07/2024,Order payment,250-0125711-9400600,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-21/07/2024,Order payment,249-8258704-3583008,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-20/07/2024,Order payment,250-3456886-6516666,"Padel Racket Joma Master, high Professio...",336,0,-103.05,0,232.95,,,
-19/07/2024,Order payment,249-0515218-4583830,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-19/07/2024,Order payment,249-7937233-9184666,"Padel Racket Joma Master, high Professio...",168,-7.99,-51.52,7.99,116.48,,,
-18/07/2024,Order payment,503-8863080-3089421,"Padel Racket Joma Master, high Professio...",84,0,-33.75,7.99,58.24,,,
-17/07/2024,Order payment,249-3955012-2813466,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,0,-28.05,0,71.94,,,
-17/07/2024,Order payment,250-7067748-6333400,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24,,,
-12/07/2024,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,3.05,3.05,,,
-06/07/2024,Service Fees,---,FBA storage fee,0,0,0,-3.05,-3.05,,,
-05/07/2024,Order payment,249-8797930-2768648,"Padel Racket Joma Master, high Professio...",75,-7.99,-22.02,7.99,52.98,,,
-03/07/2024,Order payment,503-8951977-7599058,"Padel Racket Joma Master, high Professio...",75,0,-22.02,0,52.98,,,
-02/07/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49,,,
-02/07/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-14.08,-14.08,,,
-28/06/2024,Other,162593,FBA Inventory Reimbursement,0,0,0,54.99,54.99,,,
-24/06/2024,Service Fees,24061716M4,FBA Return Fee,0,0,-0.72,0,-0.72,,,
-21/06/2024,Order payment,503-3245791-9478210,"Padel Racket Joma Master, high Professio...",300,0,-88.05,0,211.95,,,
-21/06/2024,Order payment,250-3257199-7787848,"Padel Racket Joma Master, high Professio...",150,0,-52.01,7.99,105.98,,,
-18/06/2024,Order payment,503-9918482-2675062,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,0,-28.05,0,71.94,,,
-13/06/2024,Order payment,250-8054870-0303852,"Padel Racket Joma Master, high Professio...",75,0,-30.01,7.99,52.98,,,
-08/06/2024,Order payment,250-4786702-5029459,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,-7.99,-28.33,7.99,71.66,,,
-07/06/2024,Micro Deposit,---,Disbursed to bank account,0,0,0,-0.01,-0.01,,,
-07/06/2024,Order payment,250-7515166-9991003,"Padel Racket Joma Master, high Professio...",75,-7.99,-22.02,7.99,52.98,,,
-07/06/2024,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,13.78,13.78,,,
-07/06/2024,Service Fees,---,FBA storage fee,0,0,0,-1.43,-1.43,,,
-04/06/2024,Order payment,249-7731852-6688660,"Padel Racket Joma Master, high Professio...",75,-7.99,-20.93,7.99,54.07,,,
-04/06/2024,Refund,249-7731852-6688660,"Padel Racket Joma Master, high Professio...",-75,7.99,8.58,-7.99,-66.42,,,
-17/05/2024,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,10.98,10.98,,,
-14/05/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49,,,
-14/05/2024,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49,,,
+date,Transaction Status,Transaction type,Order ID,Product Details,Total product charges,Total promotional rebates,Amazon fees,Other,Total (AUD)
+30/09/2024,Deferred,Order payment,249-0507633-8363005,"Padel Racket Joma Master, high Professio...",89,0,-26.48,0,62.52
+28/09/2024,Deferred,Order payment,249-3376935-2662267,Drive 3.3 Vintage,130,0,-38.86,7.99,99.13
+26/09/2024,Deferred,Order payment,250-0977414-1835834,"Wilson V2 Blade Team Padel Rackets, Blac...",120,0,-30.91,0,89.09
+22/09/2024,Deferred,Order payment,249-4985657-5131025,"Wilson V2 Blade Team Padel Rackets, Blac...",120,0,-30.91,0,89.09
+18/09/2024,Released,Order payment,503-4667779-4969425,"Padel Racket Joma Master, high Professio...",89,0,-26.48,0,62.52
+17/09/2024,Released,Order payment,249-4824839-9495848,Bullpadel Raider PWR,198,0,-55.13,0,142.87
+17/09/2024,Released,Order payment,249-9041422-5781436,"Padel Racket Joma Master, high Professio...",89,0,-26.48,0,62.52
+12/09/2024,Released,Order payment,249-4967784-0319847,Drive 3.3 Vintage,130,0,-30.49,0,99.51
+12/09/2024,Released,Order payment,503-1985816-6728601,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+10/09/2024,Released,Order payment,250-3679977-4481405,Bullpadel Raider PWR,99,-7.99,-27.57,7.99,71.43
+10/09/2024,Released,Order payment,503-8109331-5870234,"Padel Racket Joma Master, high Professio...",84,-9.99,-25.76,9.99,58.24
+10/09/2024,Released,Order payment,503-1248404-0062268,"Padel Racket Joma Master, high Professio...",84,-7.99,-25.76,7.99,58.24
+08/09/2024,Released,Order payment,503-9109527-9744600,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+08/09/2024,Released,Order payment,249-0012290-7942265,Bullpadel Raider PWR,99,0,-27.57,0,71.43
+07/09/2024,Released,Service Fees,---,FBA storage fee,0,0,0,-4.38,-4.38
+05/09/2024,Released,Order payment,503-6594219-0903852,adidas RX 2000 Light Padel Paddle Blue 3...,125,0,-31.29,0,93.71
+05/09/2024,Released,Order payment,249-8107921-6580608,adidas RX 2000 Light Padel Paddle Blue 3...,125,0,-31.29,0,93.71
+04/09/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-16.47,-16.47
+04/09/2024,Released,Refund,250-3854065-1544602,"Padel Racket Joma Master, high Professio...",-168,0,21.39,0,-146.61
+03/09/2024,Released,Order payment,250-3854065-1544602,"Padel Racket Joma Master, high Professio...",168,0,-51.52,0,116.48
+31/08/2024,Released,Order payment,250-0885619-2819055,"Padel Racket Joma Master, high Professio...",84,-7.99,-25.76,7.99,58.24
+27/08/2024,Released,Order payment,250-8297974-4019006,Bullpadel RAIDER PWR,99,-7.99,-27.57,7.99,71.43
+22/08/2024,Released,Order payment,503-0606708-6568608,Adidas Drive 3.3 Padel Racket,130,-3.99,-32,3.99,98
+22/08/2024,Released,Order payment,250-8405116-0119863,Bullpadel RAIDER PWR,99,0,-27.57,0,71.43
+21/08/2024,Released,Order payment,503-0127524-4596677,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98
+20/08/2024,Released,Order payment,249-4580099-3260655,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+19/08/2024,Released,Order payment,503-8128780-2175028,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98
+16/08/2024,Released,Order payment,250-4739521-0932628,Bullpadel INDIGA CONTROL 2022,99.99,0,-36.04,7.99,71.94
+16/08/2024,Released,Order payment,503-7751955-7428619,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+14/08/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-10.98,-10.98
+13/08/2024,Released,Order payment,250-4378742-0991802,"Padel Racket Joma Master, high Professio...",168,0,-51.52,0,116.48
+11/08/2024,Released,Order payment,249-7263331-3479828,Adidas Drive 3.3 Padel Racket,130,0,-32,0,98
+08/08/2024,Released,Service Fees,---,FBA storage fee,0,0,0,-5.87,-5.87
+05/08/2024,Released,Order payment,503-7286769-5054207,Bullpadel INDIGA CONTROL 2022,99.99,0,-28.05,0,71.94
+02/08/2024,Released,Service Fees,240801WF9,FBA Return Fee,0,0,-4.13,0,-4.13
+28/07/2024,Released,Order payment,249-4949848-4866252,Adidas Drive 3.3 Padel Racket,260,0,-63.78,0,196.22
+26/07/2024,Released,Order payment,250-0125711-9400600,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+21/07/2024,Released,Order payment,249-8258704-3583008,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+20/07/2024,Released,Order payment,250-3456886-6516666,"Padel Racket Joma Master, high Professio...",336,0,-103.05,0,232.95
+19/07/2024,Released,Order payment,249-0515218-4583830,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+19/07/2024,Released,Order payment,249-7937233-9184666,"Padel Racket Joma Master, high Professio...",168,-7.99,-51.52,7.99,116.48
+18/07/2024,Released,Order payment,503-8863080-3089421,"Padel Racket Joma Master, high Professio...",84,0,-33.75,7.99,58.24
+17/07/2024,Released,Order payment,249-3955012-2813466,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,0,-28.05,0,71.94
+17/07/2024,Released,Order payment,250-7067748-6333400,"Padel Racket Joma Master, high Professio...",84,0,-25.76,0,58.24
+12/07/2024,Released,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,3.05,3.05
+06/07/2024,Released,Service Fees,---,FBA storage fee,0,0,0,-3.05,-3.05
+05/07/2024,Released,Order payment,249-8797930-2768648,"Padel Racket Joma Master, high Professio...",75,-7.99,-22.02,7.99,52.98
+03/07/2024,Released,Order payment,503-8951977-7599058,"Padel Racket Joma Master, high Professio...",75,0,-22.02,0,52.98
+02/07/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49
+02/07/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-14.08,-14.08
+28/06/2024,Released,Other,S03-4517393-2217604,FBA Inventory Reimbursement,0,0,0,54.99,54.99
+24/06/2024,Released,Service Fees,24061716M4,FBA Return Fee,0,0,-0.72,0,-0.72
+21/06/2024,Released,Order payment,503-3245791-9478210,"Padel Racket Joma Master, high Professio...",300,0,-88.05,0,211.95
+21/06/2024,Released,Order payment,250-3257199-7787848,"Padel Racket Joma Master, high Professio...",150,0,-52.01,7.99,105.98
+18/06/2024,Released,Order payment,503-9918482-2675062,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,0,-28.05,0,71.94
+13/06/2024,Released,Order payment,250-8054870-0303852,"Padel Racket Joma Master, high Professio...",75,0,-30.01,7.99,52.98
+08/06/2024,Released,Order payment,250-4786702-5029459,"Bullpadel INDIGA CTR 22, Adults Unisex, ...",99.99,-7.99,-28.33,7.99,71.66
+07/06/2024,Released,Micro Deposit,---,Disbursed to bank account,0,0,0,-0.01,-0.01
+07/06/2024,Released,Order payment,250-7515166-9991003,"Padel Racket Joma Master, high Professio...",75,-7.99,-22.02,7.99,52.98
+07/06/2024,Released,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,13.78,13.78
+07/06/2024,Released,Service Fees,---,FBA storage fee,0,0,0,-1.43,-1.43
+04/06/2024,Released,Order payment,249-7731852-6688660,"Padel Racket Joma Master, high Professio...",75,-7.99,-20.93,7.99,54.07
+04/06/2024,Released,Refund,249-7731852-6688660,"Padel Racket Joma Master, high Professio...",-75,7.99,8.58,-7.99,-66.42
+17/05/2024,Released,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,10.98,10.98
+14/05/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49
+14/05/2024,Released,Service Fees,---,Inbound Transportation Charge,0,0,0,-5.49,-5.49
+26/04/2024,Released,,---,Subscription:,0,0,54.95,0,54.95
+26/04/2024,Released,Other,---,Subscription Fee Refund To Credit Card,0,0,0,-54.95,-54.95
+26/04/2024,Released,Paid to Amazon | Seller repayment,---,Successful charge,0,0,0,54.95,54.95
+26/04/2024,Released,Service Fees,---,Subscription:,0,0,-54.95,0,-54.95

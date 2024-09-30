@@ -1,93 +1,93 @@
 order_entry_id,order_id,income_type,date,sku,channel,quantity,amazon_fee,amazon_account_fee,fullfilment_cost,total_amazon_cost,unit_price,total_transaction,payment_type,payment_status,description
-1,,Sales,03/05/2024,134487,Facebook Sales,1,,,,,85.00,85.00,cash,completed,1º Batch Sale Bullpadel Indiga Control
-2,,Sales,03/05/2024,162593,Facebook Sales,1,,,,,70.00,70.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-3,,Sales,05/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-4,,Sales,05/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-5,,Sales,05/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Bullpadel Indiga Control
-6,,Sales,19/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Bullpadel Indiga Control
-7,,Sales,21/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Bullpadel Indiga Control
-8,,Sales,25/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-9,249-7731852-6688660,Sales,26/05/2024,162593,Amazon Sales,1,10.73,1.09,1.62,13.44,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-10,250-7515166-9991003,Sales,29/05/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-11,250-4786702-5029459,Sales,30/05/2024,134487,Amazon Sales,1,14.3,1.09,13.54,28.93,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
-12,,Sales,03/06/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-13,,Sales,03/06/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-14,,Sales,03/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-15,250-8054870-0303852,Sales,05/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-16,503-9918482-2675062,Sales,09/06/2024,134487,Amazon Sales,1,14.3,1.09,13.54,28.93,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
-17,250-3257199-7787848,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-18,250-3257199-7787848,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-19,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-20,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-21,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-22,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-23,,Sales,21/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-24,,Sales,21/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-25,503-8951977-7599058,Sales,25/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-26,249-8797930-2768648,Sales,26/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-27,,Sales,26/06/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-28,,Sales,27/06/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-29,S03-4517393-2217604,Sales,27/06/2024,162593,Reimbursement,1,,,,,54.99,54.99,cash,completed,FBA Inventory Reimbursement
-30,,Sales,29/06/2024,172892,Facebook Sales,1,,,,,90.00,90.00,cash,completed,2º Batch Bullpadel Raider Power
-31,,Sales,02/07/2024,148027,Facebook Sales,1,,,,,100.00,100.00,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-32,,Sales,02/07/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,completed,1º Batch Sale Bullpadel Indiga Control
-33,,Sales,05/07/2024,148058,Facebook Sales,1,,,,,100.00,100.00,cash,completed,2º Batch Sale Adidas Drive Light 3.2 2023
-34,,Sales,05/07/2024,163022,Facebook Sales,1,,,,,125.00,125.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
-35,249-3955012-2813466,Sales,08/07/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
-36,250-7067748-6333400,Sales,08/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-37,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-38,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-39,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-40,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-41,503-8863080-3089421,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-42,249-0515218-4583830,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-43,249-7937233-9184666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-44,249-7937233-9184666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-45,249-8258704-3583008,Sales,13/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-46,250-0125711-9400600,Sales,17/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-47,,Sales,18/07/2024,162593,Facebook Sales,1,,,,,50.00,50.00,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-48,,Sales,18/07/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-49,,Sales,18/07/2024,172892,Facebook Sales,1,,,,,90.00,90.00,cash,completed,2º Batch Bullpadel Raider Power
-50,249-4949848-4866252,Sales,19/07/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-51,249-4949848-4866252,Sales,19/07/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-52,,Sales,22/07/2024,172892,Facebook Sales,1,,,,,50.00,50.00,cash,completed,2º Batch Bullpadel Raider Power
-53,503-7286769-5054207,Sales,27/07/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
-54,,Sales,29/07/2024,163016,Facebook Sales,1,18.59,1.09,12.21,31.89,125.00,125.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-55,,Sales,31/07/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,completed,2º Batch Bullpadel Indiga Power 2023
-56,,Sales,31/07/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,completed,2º Batch Bullpadel Indiga Power 2023
-57,249-7263331-3479828,Sales,01/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-58,,Sales,02/08/2024,172892,Facebook Sales,1,,,,,50.00,50.00,cash,completed,2º Batch Bullpadel Raider Power
-59,,Sales,02/08/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-60,,Sales,02/08/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-61,,Sales,02/08/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-62,,Sales,02/08/2024,148027,Facebook Sales,1,,,,,100.00,100.00,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-63,250-4739521-0932628,Sales,07/08/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,completed,1º Batch Sale Bullpadel Indiga Control
-64,503-7751955-7428619,Sales,08/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-65,503-8128780-2175028,Sales,09/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-66,250-8405116-0119863,Sales,11/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,completed,2º Batch Sale Bullpadel Raider Power
-67,249-4580099-3260655,Sales,12/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-68,503-0127524-4596677,Sales,12/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-69,503-0606708-6568608,Sales,13/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-70,250-8297974-4019006,Sales,18/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,completed,2º Batch Sale Bullpadel Raider Power
-71,250-3854065-1544602,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-72,250-3854065-1544602,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-73,250-0885619-2819055,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-74,,Sales,24/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-75,,Sales,24/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-76,,Sales,26/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-77,,Sales,26/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-78,249-8107921-6580608,Sales,27/08/2024,148027,Amazon Sales,1,17.88,1.09,12.32,31.29,125.00,125.00,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-79,503-6594219-0903852,Sales,27/08/2024,148027,Amazon Sales,1,17.88,1.09,12.32,31.29,125.00,125.00,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-80,,Sales,29/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,completed,1º Batch Sale Dunlop Speed Elite
-81,250-3679977-4481405,Sales,31/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,completed,2º Batch Sale Bullpadel Raider Power
-82,249-0012290-7942265,Sales,31/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,completed,2º Batch Sale Bullpadel Raider Power
-83,503-9109527-9744600,Sales,31/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-84,503-1248404-0062268,Sales,31/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-85,503-8109331-5870234,Sales,03/09/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-86,249-4967784-0319847,Sales,03/09/2024,163022,Amazon Sales,1,17.89,1.09,9.83,28.81,130.00,130.00,cash,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
-87,,Sales,03/09/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,completed,2º Batch Bullpadel Indiga Power 2023
-88,503-1985816-6728601,Sales,04/09/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
+1,,Sales,03/05/2024,134487,Facebook Sales,1,,,,,85.00,85.00,cash,pending,1º Batch Sale Bullpadel Indiga Control
+2,,Sales,03/05/2024,162593,Facebook Sales,1,,,,,70.00,70.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+3,,Sales,05/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+4,,Sales,05/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+5,,Sales,05/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Bullpadel Indiga Control
+6,,Sales,19/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Bullpadel Indiga Control
+7,,Sales,21/05/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Bullpadel Indiga Control
+8,,Sales,25/05/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+9,249-7731852-6688660,Sales,26/05/2024,162593,Amazon Sales,1,10.73,1.09,1.62,13.44,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+10,250-7515166-9991003,Sales,29/05/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+11,250-4786702-5029459,Sales,30/05/2024,134487,Amazon Sales,1,14.3,1.09,13.54,28.93,99.99,99.99,cash,pending,1º Batch Sale Bullpadel Indiga Control
+12,,Sales,03/06/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+13,,Sales,03/06/2024,141108,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+14,,Sales,03/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+15,250-8054870-0303852,Sales,05/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+16,503-9918482-2675062,Sales,09/06/2024,134487,Amazon Sales,1,14.3,1.09,13.54,28.93,99.99,99.99,cash,pending,1º Batch Sale Bullpadel Indiga Control
+17,250-3257199-7787848,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+18,250-3257199-7787848,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+19,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+20,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+21,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+22,503-3245791-9478210,Sales,13/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+23,,Sales,21/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+24,,Sales,21/06/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+25,503-8951977-7599058,Sales,25/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+26,249-8797930-2768648,Sales,26/06/2024,162593,Amazon Sales,1,10.73,1.09,10.2,22.02,75.00,75.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+27,,Sales,26/06/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Wilson Blade Team V2 Black
+28,,Sales,27/06/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Wilson Blade Team V2 Black
+29,S03-4517393-2217604,Sales,27/06/2024,162593,Reimbursement,1,,,,,54.99,54.99,cash,pending,FBA Inventory Reimbursement
+30,,Sales,29/06/2024,172892,Facebook Sales,1,,,,,90.00,90.00,cash,pending,2º Batch Bullpadel Raider Power
+31,,Sales,02/07/2024,148027,Facebook Sales,1,,,,,100.00,100.00,cash,pending,2º Batch Sale Adidas RX 2000 Light 2023
+32,,Sales,02/07/2024,134487,Facebook Sales,1,,,,,90.00,90.00,cash,pending,1º Batch Sale Bullpadel Indiga Control
+33,,Sales,05/07/2024,148058,Facebook Sales,1,,,,,100.00,100.00,cash,pending,2º Batch Sale Adidas Drive Light 3.2 2023
+34,,Sales,05/07/2024,163022,Facebook Sales,1,,,,,125.00,125.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Vintage 2024
+35,249-3955012-2813466,Sales,08/07/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,pending,1º Batch Sale Bullpadel Indiga Control
+36,250-7067748-6333400,Sales,08/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+37,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+38,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+39,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+40,250-3456886-6516666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+41,503-8863080-3089421,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+42,249-0515218-4583830,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+43,249-7937233-9184666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+44,249-7937233-9184666,Sales,10/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+45,249-8258704-3583008,Sales,13/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+46,250-0125711-9400600,Sales,17/07/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+47,,Sales,18/07/2024,162593,Facebook Sales,1,,,,,50.00,50.00,cash,pending,1º Batch Sale Joma Master Negro Turquesa
+48,,Sales,18/07/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Wilson Blade Team V2 Black
+49,,Sales,18/07/2024,172892,Facebook Sales,1,,,,,90.00,90.00,cash,pending,2º Batch Bullpadel Raider Power
+50,249-4949848-4866252,Sales,19/07/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+51,249-4949848-4866252,Sales,19/07/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+52,,Sales,22/07/2024,172892,Facebook Sales,1,,,,,50.00,50.00,cash,pending,2º Batch Bullpadel Raider Power
+53,503-7286769-5054207,Sales,27/07/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,pending,1º Batch Sale Bullpadel Indiga Control
+54,,Sales,29/07/2024,163016,Facebook Sales,1,18.59,1.09,12.21,31.89,125.00,125.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+55,,Sales,31/07/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,pending,2º Batch Bullpadel Indiga Power 2023
+56,,Sales,31/07/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,pending,2º Batch Bullpadel Indiga Power 2023
+57,249-7263331-3479828,Sales,01/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+58,,Sales,02/08/2024,172892,Facebook Sales,1,,,,,50.00,50.00,cash,pending,2º Batch Bullpadel Raider Power
+59,,Sales,02/08/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Wilson Blade Team V2 Black
+60,,Sales,02/08/2024,142586,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Wilson Blade Team V2 Black
+61,,Sales,02/08/2024,162593,Facebook Sales,1,,,,,75.00,75.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+62,,Sales,02/08/2024,148027,Facebook Sales,1,,,,,100.00,100.00,cash,pending,2º Batch Sale Adidas RX 2000 Light 2023
+63,250-4739521-0932628,Sales,07/08/2024,134487,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,cash,pending,1º Batch Sale Bullpadel Indiga Control
+64,503-7751955-7428619,Sales,08/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+65,503-8128780-2175028,Sales,09/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+66,250-8405116-0119863,Sales,11/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
+67,249-4580099-3260655,Sales,12/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+68,503-0127524-4596677,Sales,12/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+69,503-0606708-6568608,Sales,13/08/2024,163016,Amazon Sales,1,18.59,1.09,12.21,31.89,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Padel Racket
+70,250-8297974-4019006,Sales,18/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
+71,250-3854065-1544602,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+72,250-3854065-1544602,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+73,250-0885619-2819055,Sales,21/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+74,,Sales,24/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+75,,Sales,24/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+76,,Sales,26/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+77,,Sales,26/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+78,249-8107921-6580608,Sales,27/08/2024,148027,Amazon Sales,1,17.88,1.09,12.32,31.29,125.00,125.00,cash,pending,2º Batch Sale Adidas RX 2000 Light 2023
+79,503-6594219-0903852,Sales,27/08/2024,148027,Amazon Sales,1,17.88,1.09,12.32,31.29,125.00,125.00,cash,pending,2º Batch Sale Adidas RX 2000 Light 2023
+80,,Sales,29/08/2024,141108,Facebook Sales,1,,,,,80.00,80.00,cash,pending,1º Batch Sale Dunlop Speed Elite
+81,250-3679977-4481405,Sales,31/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
+82,249-0012290-7942265,Sales,31/08/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
+83,503-9109527-9744600,Sales,31/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+84,503-1248404-0062268,Sales,31/08/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+85,503-8109331-5870234,Sales,03/09/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+86,249-4967784-0319847,Sales,03/09/2024,163022,Amazon Sales,1,17.89,1.09,9.83,28.81,130.00,130.00,cash,pending,2º Batch Sale Adidas Drive 3.3 Vintage 2024
+87,,Sales,03/09/2024,148187,Facebook Sales,1,18.59,1.09,12.21,31.89,100.00,100.00,cash,pending,2º Batch Bullpadel Indiga Power 2023
+88,503-1985816-6728601,Sales,04/09/2024,162593,Amazon Sales,1,12.01,1.09,12.66,25.76,84.00,84.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
 89,249-4824839-9495848,Sales,08/09/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
 90,249-4824839-9495848,Sales,08/09/2024,172892,Amazon Sales,1,14.16,1.09,12.32,27.57,99.00,99.00,cash,pending,2º Batch Sale Bullpadel Raider Power
-91,503-4667779-4969425,Sales,09/09/2024,162593,Amazon Sales,1,12.73,1.09,12.66,26.48,89.00,89.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-92,249-9041422-5781436,Sales,09/09/2024,162593,Amazon Sales,1,12.73,1.09,12.66,26.48,89.00,89.00,cash,completed,2º Batch Sale Joma Master Negro Turquesa
+91,503-4667779-4969425,Sales,09/09/2024,162593,Amazon Sales,1,12.73,1.09,12.66,26.48,89.00,89.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa
+92,249-9041422-5781436,Sales,09/09/2024,162593,Amazon Sales,1,12.73,1.09,12.66,26.48,89.00,89.00,cash,pending,2º Batch Sale Joma Master Negro Turquesa

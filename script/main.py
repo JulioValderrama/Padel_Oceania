@@ -78,7 +78,7 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
     for index, row in df_amazon.iterrows():
 
         # Going through Sales and updating payment_status from Pending to Completed for those that Amazon paid, checking by Order Id
-        if row['Transaction type'] == 'Order payment':
+        if (row['Transaction type'] == 'Order payment') and (row['Transaction Status'] == 'Released'):
             income_df = updating_payment_status(income_df, row['Order ID'])
 
         # Looking for Transaction Type - Order Payment for registering sales
@@ -101,7 +101,7 @@ def reading_amazon_csv_to_income(income_df, inventory_df):
         # Looking for Transaction Type - Other - Reimbursement - which is a return of a faulty item so we have to remove it from Inventory
         if row['Product Details'] == 'FBA Inventory Reimbursement':
 
-            sku = int(row['Order ID'])
+            sku = row['Order ID']
 
             # Updating the Inventory to remove the FAULTY ITEMS FROM INVENTORY
             inventory_df = update_inventory_after_fault(sku, 1, inventory_df)
