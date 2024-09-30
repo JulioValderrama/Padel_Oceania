@@ -17,25 +17,23 @@ def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quar
     # Process purchases (adding to inventory)
     for _, row in df_expenses_filtered.iterrows():
 
-        if (row['expense_type'] == 'purchase_inventory') and (row['sku'] == 162593.0):
+        if row['expense_type'] == 'purchase_inventory':
 
             sku = row['sku']
 
             if sku not in inventory_tracker:
                 inventory_tracker[sku] = {
                     'quantity': 0,
-                    'total_cogs': 0
+                    'total_cogs': 0,
+                    'average_cogs': 0
                 }
 
-            print(row['quantity'])
             batch = row['batch']
-            cogs = float(df_inventory[df_inventory['batch'] == batch]['total_cogs'].values[0])
-            print(cogs)
+            cogs = float(df_inventory[(df_inventory['batch'] == batch) & (df_inventory['sku'] == sku)]['total_cogs'].values[0])
 
             inventory_tracker[sku]['quantity'] += row['quantity']
             inventory_tracker[sku]['total_cogs'] += cogs * row['quantity']
-
-    print('dsdsdsdsd', inventory_tracker)
+            inventory_tracker[sku]['average_cogs'] = inventory_tracker[sku]['total_cogs'] / inventory_tracker[sku]['quantity']
 
     # Process sales (subtracting from inventory)
     for _, income_row in df_income_filtered.iterrows():
@@ -62,6 +60,8 @@ def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quar
             inventory_tracker[refunded_sku]['quantity'] += int(refunded_quantity)
 
 
-    return inventory_tracker
+    total_cogs = sum(data['quantity'] * data['average_cogs'] for data in inventory_tracker.values())
+
+    return total_cogs
 
 
