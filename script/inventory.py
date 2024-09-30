@@ -79,7 +79,7 @@ def update_inventory_refunded(income_df, inventory_df, order_id):
             sku = income_df.at[index, 'sku']
             date = income_df.at[index, 'date']
             quantity = income_df.at[index, 'quantity']
-
+            
             for index, row in df_inventory.iterrows():
                 if (row['sku'] == sku) and (row['date'] <= date) and (quantity > 0):
                     df_inventory.at[index, 'quantity'] += quantity
@@ -100,3 +100,24 @@ def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
             quantity_remaining -= quantity_to_reduce
     
     return inventory_df
+
+def getting_sku_with_order_id(df_income, order_id):
+
+    for index, row in df_income.iterrows():
+
+        if row['income_type'] == 'Sales' and row['order_id'] == order_id:
+
+            sku = row['sku']
+            unit_price = row['unit_price']
+
+    return sku
+
+def getting_unit_price_with_order_id(df_income, order_id):
+
+    for index, row in df_income.iterrows():
+
+        if row['income_type'] == 'Sales' and row['order_id'] == order_id:
+
+            unit_price = row['unit_price']
+
+    return unit_price

@@ -68,7 +68,7 @@ def create_comparative_table(current_period, previous_period, current_period_lab
     table.auto_set_column_width([0, 1, 2])
 
     # Show the table
-    plt.show()
+    #plt.show()
 
 # Function to export the comparative table to a PDF file using fpdf
 def export_to_pdf(current_period, previous_period, current_period_label, previous_period_label):

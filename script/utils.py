@@ -21,3 +21,17 @@ def generate_period_label(year, quarter=None, month=None):
         return f'Q{quarter} {year}'
     else:
         return str(year)
+    
+# Function that will filter Data Frames according to the Period of time, Year, Quarter or Month that the User provides
+def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
+
+    # Filter data by year, quarter, or month
+    df_filtered = df[df['date'].dt.year == year]
+
+    if quarter is not None:
+        df_filtered = df_filtered[df_filtered['date'].dt.quarter == quarter]
+    
+    if month is not None:
+        df_filtered = df_filtered[df_filtered['date'].dt.month == month]
+
+    return df_filtered

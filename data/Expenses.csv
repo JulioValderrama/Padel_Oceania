@@ -22,5 +22,5 @@ expense_entry_id,expense_id,expense_type,sku,batch,unit_price,quantity,item,chan
 21,EXP005,purchase_inventory,148020,3,135.00,3,Pala Head Speed Elite 2023,Tienda Padel Point,724794634325,B0BPMG21D8,405.00,cash,completed,20/08/2024,Pala Head Speed Elite 2023
 22,EXP005,purchase_inventory,142586,3,57.27,5,Wilson Blade Team V2 Black,Tienda Padel Point,97512545624,B09MWJM2P6,286.35,cash,completed,20/08/2024,Wilson Blade Team V2 Black
 23,EXP005,shipping_supplier,,3,124.00,1,Shipping,Tienda Padel Point,,,124.00,cash,completed,20/08/2024,Shipping
-24,EXP006,purchase_inventory,162593,4,33.89,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,677.71,cash,completed,18/08/2024,Pack Joma Master Negro Turquesa Flour x 10
-25,EXP006,shipping_supplier,,4,128.73,1,Shipping,Tienda Padel Point,,,128.73,cash,completed,18/08/2024,Shipping
+24,EXP006,purchase_inventory,162593,4,33.89,20,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535,B09QH42CYG,677.71,cash,completed,18/09/2024,Pack Joma Master Negro Turquesa Flour x 10
+25,EXP006,shipping_supplier,,4,128.73,1,Shipping,Tienda Padel Point,,,128.73,cash,completed,18/09/2024,Shipping

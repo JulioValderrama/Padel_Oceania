@@ -1,10 +1,11 @@
 import pandas as pd
 
 # Importing other modules
-from data import df_income, df_expenses
-from income_statement import updating_payment_status, generate_comparative_income_statement
+from data import *
+from income_statement import *
 from inventory import *
 from utils import *
+from balance_sheet import *
 
 from pdf_export import create_comparative_table, export_to_pdf  # Importing functions from the pdf_export module
 
@@ -154,11 +155,17 @@ add_inventory(df_expenses)
 # Updating the Expenses with OPERATIONAL EXPENSES from Amazon.csv
 df_expenses = reading_amazon_csv_to_expenses(df_expenses)
 
-# Updating the
+# Updating the df_income and df_inventory from Amazon.csv
 df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 
-# Generate comparative income statement for Q2 2024
-current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, 2024, 3)
+#  ---------------------------- GENERATING FINANCIAL REPORTS--------------------------------------------------------------------------
+
+year = 2024
+quarter = None
+month = None
+
+# Generate comparative income statement for a specific period
+current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, year, quarter, month)
 
 # Create the table and export to PDF (period labels generated automatically)
 create_comparative_table(current_period, previous_period, current_period_label, previous_period_label)
@@ -167,4 +174,8 @@ export_to_pdf(current_period, previous_period, current_period_label, previous_pe
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
+
+result = calculating_inventory_value(df_expenses, df_income, year, quarter, month)
+
+print(result)
 

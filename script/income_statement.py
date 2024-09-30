@@ -3,7 +3,7 @@
 import pandas as pd
 from data import df_inventory, df_expenses, df_income, operational_expenses, other_income
 from inventory import update_inventory
-from utils import generate_period_label
+from utils import generate_period_label, filtering_by_year_quarter_month
 
 # Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon in Amazon.csv to Income.csv
 def updating_payment_status(income_df, order_id):
@@ -69,20 +69,6 @@ def calculating_other_income(df_income, year, quarter=None, month=None):
     return total_other_income
 
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
-
-# Function that will filter Data Frames according to the Period of time, Year, Quarter or Month that the User provides
-def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
-
-    # Filter data by year, quarter, or month
-    df_filtered = df[df['date'].dt.year == year]
-
-    if quarter is not None:
-        df_filtered = df_filtered[df_filtered['date'].dt.quarter == quarter]
-    
-    if month is not None:
-        df_filtered = df_filtered[df_filtered['date'].dt.month == month]
-
-    return df_filtered
 
 # Income Statement Function that will get the Income Statement out of the period the User enters
 def income_statement(df_income, df_expenses, year, quarter=None, month=None):
