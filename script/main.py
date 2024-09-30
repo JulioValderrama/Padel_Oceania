@@ -175,7 +175,6 @@ df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
 
-result = calculating_inventory_value(df_expenses, df_income, year, quarter, month)
+result = calculating_inventory_value(df_expenses, df_income, df_inventory, year, quarter, month)
 
 print(result)
-

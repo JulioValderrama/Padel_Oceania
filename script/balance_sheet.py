@@ -5,7 +5,7 @@ from data import *
 from inventory import *
 from utils import *
 
-def calculating_inventory_value(df_expenses, df_income, year, quarter=None, month=None):
+def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quarter=None, month=None):
 
     # Filter purchases and sales by date range
     df_expenses_filtered = filtering_by_year_quarter_month(df_expenses, year, quarter, month)
@@ -17,20 +17,32 @@ def calculating_inventory_value(df_expenses, df_income, year, quarter=None, mont
     # Process purchases (adding to inventory)
     for _, row in df_expenses_filtered.iterrows():
 
-        if row['expense_type'] == 'purchase_inventory':
+        if (row['expense_type'] == 'purchase_inventory') and (row['sku'] == 162593.0):
 
             sku = row['sku']
 
             if sku not in inventory_tracker:
-                inventory_tracker[sku] = 0
-            inventory_tracker[sku] += row['quantity']
+                inventory_tracker[sku] = {
+                    'quantity': 0,
+                    'total_cogs': 0
+                }
+
+            print(row['quantity'])
+            batch = row['batch']
+            cogs = float(df_inventory[df_inventory['batch'] == batch]['total_cogs'].values[0])
+            print(cogs)
+
+            inventory_tracker[sku]['quantity'] += row['quantity']
+            inventory_tracker[sku]['total_cogs'] += cogs * row['quantity']
+
+    print('dsdsdsdsd', inventory_tracker)
 
     # Process sales (subtracting from inventory)
     for _, income_row in df_income_filtered.iterrows():
 
         if income_row['sku'] in inventory_tracker:
 
-            inventory_tracker[income_row['sku']] -= income_row['quantity']
+            inventory_tracker[income_row['sku']]['quantity'] -= income_row['quantity']
         
         if income_row['income_type'] == 'Refund':
 
@@ -47,7 +59,7 @@ def calculating_inventory_value(df_expenses, df_income, year, quarter=None, mont
                 refunded_quantity = math.ceil(refunded_quantity)
             
             # Add refunded quantity back to inventory (without subtracting 1)
-            inventory_tracker[refunded_sku] += int(refunded_quantity)
+            inventory_tracker[refunded_sku]['quantity'] += int(refunded_quantity)
 
 
     return inventory_tracker
