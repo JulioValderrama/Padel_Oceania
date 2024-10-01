@@ -5,6 +5,67 @@ from data import *
 from inventory import *
 from income_statement import *
 
+def reading_amazon_csv_to_expenses_period(df_expenses_period):
+    
+    df_amazon = pd.read_csv('data/Amazon.csv')
+    df_amazon = convert_date(df_amazon)
+    
+    # Start with the current length of the expenses DataFrame for entry ID tracking
+    current_expense_id = len(df_expenses_period)
+
+    # Looking for Operational Costs from file and adding it to df_expenses
+    for _, row in df_amazon.iterrows():
+
+        if row['Product Details'] == 'Inbound Transportation Charge':
+
+            df_expenses_period.loc[len(df_expenses_period)] = {
+                'expense_entry_id': current_expense_id,
+                'date': row['date'],  # Date from Amazon CSV
+                'expense_type': row['Product Details'],  # Product Details mapped to expense_type
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
+                'quantity': 1,  # Quantity is set to 1 as required
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']  # Description similar to expense_type
+            }
+
+            current_expense_id += 1
+
+        if row['Product Details'] == 'FBA storage fee':
+
+            df_expenses_period.loc[len(df_expenses_period)] = {
+                'expense_entry_id': current_expense_id,
+                'date': row['date'],  # Date from Amazon CSV
+                'expense_type': row['Product Details'],  # Product Details mapped to expense_type
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
+                'quantity': 1,  # Quantity is set to 1 as required
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']  # Description similar to expense_type
+            }
+
+            current_expense_id += 1
+
+        if row['Product Details'] == 'FBA Return Fee':
+
+            df_expenses_period.loc[len(df_expenses_period)] = {
+                'expense_entry_id': current_expense_id,
+                'date': row['date'],  # Date from Amazon CSV
+                'expense_type': row['Product Details'],  # Product Details mapped to expense_type
+                'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
+                'quantity': 1,  # Quantity is set to 1 as required
+                'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
+                'payment_type': 'cash',
+                'payment_status': 'completed',
+                'description': row['Product Details']  # Description similar to expense_type
+            }
+
+            current_expense_id += 1
+
+    return df_expenses_period
+
 def updating_inventory_with_sales_period(year, quarter=None):
 
     df_income = pd.read_csv('data/Income.csv')
@@ -123,8 +184,23 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
 
     return df_income_period, df_inventory_period
 
-# def calculating_cash_receivable(df_income_period):
+# def calculating_cash_receivable(df_income_period, df_expenses_period):
 
-#     for index, row in df_income_period.iterrows():
+#     account_receivable = 0
+#     cash = 0
 
-#         if row['']
+#     for _, row in df_income_period.iterrows():
+
+#         if row['payment_status'] == 'pending':
+#             account_receivable += row['total_transaction']
+#         else:
+#             cash += row['total_transaction']
+
+#     print('CASH',cash)
+#     print('account', account_receivable)
+
+#     for _, row in df_expenses_period.iterrows():
+
+#         if row
+
+#     return cash, account_receivable
