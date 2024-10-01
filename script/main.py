@@ -161,7 +161,7 @@ df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 #  ---------------------------- GENERATING FINANCIAL REPORTS--------------------------------------------------------------------------
 
 year = 2024
-quarter = None
+quarter = 1
 month = None
 
 # Generate comparative income statement for a specific period

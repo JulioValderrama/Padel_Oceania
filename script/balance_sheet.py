@@ -3,9 +3,17 @@ import math
 
 from data import *
 from inventory import *
-from utils import *
+from utils import get_prior_year_and_quarter
 
 def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quarter=None, month=None):
+
+    prior_year, prior_quarter = get_prior_year_and_quarter(year, quarter)
+
+    prior_total_cogs = inventory_value_beggining_period(df_inventory, prior_year, prior_quarter)
+    print('Prior', prior_total_cogs)
+
+    current_period = inventory_value_beggining_period(df_inventory, year, quarter)
+    print('CURRENT', current_period)
 
     # Filter purchases and sales by date range
     df_expenses_filtered = filtering_by_year_quarter_month(df_expenses, year, quarter, month)
@@ -62,6 +70,6 @@ def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quar
 
     total_cogs = sum(data['quantity'] * data['average_cogs'] for data in inventory_tracker.values())
 
-    return total_cogs
+    return total_cogs, inventory_tracker
 
 

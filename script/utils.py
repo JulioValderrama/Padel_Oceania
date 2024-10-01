@@ -35,3 +35,20 @@ def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
         df_filtered = df_filtered[df_filtered['date'].dt.month == month]
 
     return df_filtered
+
+def get_prior_year_and_quarter(current_year, current_quarter=None):
+    # If quarter is provided
+    if current_quarter is not None:
+        # If the current quarter is 1, the prior quarter is 4, and prior year is current year - 1
+        if current_quarter == 1:
+            prior_year = current_year - 1
+            prior_quarter = 4
+        else:
+            prior_year = current_year
+            prior_quarter = current_quarter - 1
+    else:
+        # If quarter is None, only return the prior year (subtract 1 from current year)
+        prior_year = current_year - 1
+        prior_quarter = None
+    
+    return prior_year, prior_quarter

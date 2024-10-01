@@ -2,6 +2,7 @@
 
 import pandas as pd
 from data import df_inventory
+from utils import *
 
 # Adding Inventroy from Purchasing_inventory Expenses from expenses.csv
 def add_inventory(expenses_df):   #FIFO
@@ -121,3 +122,15 @@ def getting_unit_price_with_order_id(df_income, order_id):
             unit_price = row['unit_price']
 
     return unit_price
+
+def inventory_value_beggining_period(df_inventory, year, quarter=None, month=None):
+
+    df_inventory_filtered = filtering_by_year_quarter_month(df_inventory, year, quarter, month)
+
+    total_cogs = 0
+
+    for _, row in df_inventory_filtered.iterrows():
+        total_cogs += row['quantity'] * row['total_cogs']
+
+    return total_cogs
+    
