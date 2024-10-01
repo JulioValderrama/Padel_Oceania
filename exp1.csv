@@ -24,15 +24,15 @@ expense_entry_id,expense_id,expense_type,sku,batch,unit_price,quantity,item,chan
 23,EXP005,shipping_supplier,,3.0,124.0,1.0,Shipping,Tienda Padel Point,,,124.0,cash,completed,2024-08-20,Shipping
 24,EXP006,purchase_inventory,162593.0,4.0,33.89,20.0,Pack Joma Master Negro Turquesa Flour x 10,Tienda Padel Point,8445456038535.0,B09QH42CYG,677.71,cash,completed,2024-09-18,Pack Joma Master Negro Turquesa Flour x 10
 25,EXP006,shipping_supplier,,4.0,128.73,1.0,Shipping,Tienda Padel Point,,,128.73,cash,completed,2024-09-18,Shipping
-25,,FBA storage fee,,,4.38,1.0,,,,,4.38,cash,completed,2024-09-07,FBA storage fee
-26,,Inbound Transportation Charge,,,16.47,1.0,,,,,16.47,cash,completed,2024-09-04,Inbound Transportation Charge
-27,,Inbound Transportation Charge,,,10.98,1.0,,,,,10.98,cash,completed,2024-08-14,Inbound Transportation Charge
-28,,FBA storage fee,,,5.87,1.0,,,,,5.87,cash,completed,2024-08-08,FBA storage fee
-29,,FBA Return Fee,,,4.13,1.0,,,,,4.13,cash,completed,2024-08-02,FBA Return Fee
-30,,FBA storage fee,,,3.05,1.0,,,,,3.05,cash,completed,2024-07-06,FBA storage fee
-31,,Inbound Transportation Charge,,,5.49,1.0,,,,,5.49,cash,completed,2024-07-02,Inbound Transportation Charge
-32,,Inbound Transportation Charge,,,14.08,1.0,,,,,14.08,cash,completed,2024-07-02,Inbound Transportation Charge
-33,,FBA Return Fee,,,0.72,1.0,,,,,0.72,cash,completed,2024-06-24,FBA Return Fee
-34,,FBA storage fee,,,1.43,1.0,,,,,1.43,cash,completed,2024-06-07,FBA storage fee
-35,,Inbound Transportation Charge,,,5.49,1.0,,,,,5.49,cash,completed,2024-05-14,Inbound Transportation Charge
-36,,Inbound Transportation Charge,,,5.49,1.0,,,,,5.49,cash,completed,2024-05-14,Inbound Transportation Charge
+25,,FBA storage fee,,,4.38,1.0,,Amazon,,,4.38,cash,completed,2024-09-07,FBA storage fee
+26,,Inbound Transportation Charge,,,16.47,1.0,,Amazon,,,16.47,cash,completed,2024-09-04,Inbound Transportation Charge
+27,,Inbound Transportation Charge,,,10.98,1.0,,Amazon,,,10.98,cash,completed,2024-08-14,Inbound Transportation Charge
+28,,FBA storage fee,,,5.87,1.0,,Amazon,,,5.87,cash,completed,2024-08-08,FBA storage fee
+29,,FBA Return Fee,,,4.13,1.0,,Amazon,,,4.13,cash,completed,2024-08-02,FBA Return Fee
+30,,FBA storage fee,,,3.05,1.0,,Amazon,,,3.05,cash,completed,2024-07-06,FBA storage fee
+31,,Inbound Transportation Charge,,,5.49,1.0,,Amazon,,,5.49,cash,completed,2024-07-02,Inbound Transportation Charge
+32,,Inbound Transportation Charge,,,14.08,1.0,,Amazon,,,14.08,cash,completed,2024-07-02,Inbound Transportation Charge
+33,,FBA Return Fee,,,0.72,1.0,,Amazon,,,0.72,cash,completed,2024-06-24,FBA Return Fee
+34,,FBA storage fee,,,1.43,1.0,,Amazon,,,1.43,cash,completed,2024-06-07,FBA storage fee
+35,,Inbound Transportation Charge,,,5.49,1.0,,Amazon,,,5.49,cash,completed,2024-05-14,Inbound Transportation Charge
+36,,Inbound Transportation Charge,,,5.49,1.0,,Amazon,,,5.49,cash,completed,2024-05-14,Inbound Transportation Charge

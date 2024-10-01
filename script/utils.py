@@ -4,7 +4,8 @@ import pandas as pd
 
 # Cleaning column DATE and converting it to format DateTime
 def convert_date(df):
-    df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce')
+    # Convert the 'date' column from 'dd/mm/yyyy' format to datetime
+    df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', dayfirst=True, errors='coerce')
     return df
 
 # Function to format values with max two decimals

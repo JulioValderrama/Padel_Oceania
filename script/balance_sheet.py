@@ -24,6 +24,7 @@ def reading_amazon_csv_to_expenses_period(df_expenses_period):
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
                 'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
+                'channel': 'Amazon',
                 'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'payment_type': 'cash',
                 'payment_status': 'completed',
@@ -40,6 +41,7 @@ def reading_amazon_csv_to_expenses_period(df_expenses_period):
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
                 'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
+                'channel': 'Amazon',
                 'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'payment_type': 'cash',
                 'payment_status': 'completed',
@@ -56,6 +58,7 @@ def reading_amazon_csv_to_expenses_period(df_expenses_period):
                 'expense_type': row['Product Details'],  # Product Details mapped to expense_type
                 'unit_price': abs(row['Total (AUD)']),  # Total (AUD) mapped to unit_price
                 'quantity': 1,  # Quantity is set to 1 as required
+                'channel': 'Amazon',
                 'total_transaction': abs(row['Total (AUD)']),  # Total (AUD) for total_transaction
                 'payment_type': 'cash',
                 'payment_status': 'completed',
@@ -104,6 +107,10 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
     
     df_amazon_period = filter_transactions_before_period(df_amazon, year, quarter)
 
+    # Create 'Net Amazon payment' column if it doesn't exist
+    if 'Net Amazon payment' not in df_income_period.columns:
+        df_income_period['Net Amazon payment'] = pd.NA  # Initialize with NaN or 0 as needed
+
     # Creating variable to generate entry_id according to the lenght of the DataFrame
     current_income_id = len(df_income_period) + 1
 
@@ -111,7 +118,10 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
 
         # Going through Sales and updating payment_status from Pending to Completed for those that Amazon paid, checking by Order Id
         if (row['Transaction type'] == 'Order payment') and (row['Transaction Status'] == 'Released'):
+
             df_income_period = updating_payment_status(df_income_period, row['Order ID'])
+            # Update the 'Net Amazon payment' for the matched row
+            df_income_period.loc[df_income_period['order_id'] == row['Order ID'], 'net_amazon_payment'] = row['Total (AUD)']
 
         # Looking for Transaction Type - Order Payment for registering sales
         if row['Transaction type'] == 'Paid to Amazon | Seller repayment':
@@ -184,23 +194,42 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
 
     return df_income_period, df_inventory_period
 
-# def calculating_cash_receivable(df_income_period, df_expenses_period):
+def calculating_total_liabilities_period(year, quarter=None):
+    
+    # Read the CSV and convert the 'date' column to datetime
+    df_liabilities = pd.read_csv('data/Liabilities.csv')
+    df_liabilities = convert_date(df_liabilities)
+    
+    # Filter the DataFrame based on the year and quarter
+    df_liabilities_filtered = filtering_by_year_quarter_month(df_liabilities, year, quarter)
 
-#     account_receivable = 0
-#     cash = 0
+    # Sum the 'balance' column
+    total_liabilities = df_liabilities_filtered['balance'].sum()
 
-#     for _, row in df_income_period.iterrows():
+    return total_liabilities
 
-#         if row['payment_status'] == 'pending':
-#             account_receivable += row['total_transaction']
-#         else:
-#             cash += row['total_transaction']
+def calculating_cash_receivable(df_income_period, df_expenses_period, year, quarter=None):
 
-#     print('CASH',cash)
-#     print('account', account_receivable)
+    df_amazon = pd.read_csv('data/Amazon.csv')
+    df_amazon = convert_date(df_amazon)
+    df_amazon_period = filter_transactions_before_period(df_amazon, year, quarter)
 
-#     for _, row in df_expenses_period.iterrows():
+    account_receivable = 0
+    total_revenue_amazon = 0
+    total_revenue_facebook = 0
+    total_expenses = df_expenses_period.loc[df_expenses_period['channel'] != 'Amazon', 'total_transaction'].sum()
+    total_liabilities = calculating_total_liabilities_period(year, quarter) 
 
-#         if row
+    for _, row in df_income_period.iterrows():
 
-#     return cash, account_receivable
+        if row['payment_status'] == 'pending':
+            account_receivable += row['total_transaction']
+        
+        if row['channel'] == 'Facebook Sales':
+            total_revenue_facebook += row['total_transaction']
+
+    total_revenue_amazon += df_amazon_period['Total (AUD)'].sum()
+
+    cash = (total_revenue_amazon + total_revenue_facebook + total_liabilities) - total_expenses
+    
+    return cash, account_receivable, total_liabilities

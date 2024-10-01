@@ -100,7 +100,6 @@ def update_inventory_after_fault(sku, quantity_to_reduce, inventory_df):
         if (row['sku'] == sku) and (quantity_remaining > 0):
             inventory_df.at[index, 'quantity'] -= quantity_to_reduce
             quantity_remaining -= quantity_to_reduce
-            print('SKUUUUUUUUUUUUUUUUU',row['sku'], row['quantity'])
     
     return inventory_df
 

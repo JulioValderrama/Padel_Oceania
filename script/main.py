@@ -187,13 +187,23 @@ df_income_period, df_inventory_period = updating_income_inventory_with_amazon(df
 # Updating Expenses with Amazon.csv per period
 
 df_expenses_period = reading_amazon_csv_to_expenses_period(df_expenses_period)
-
+ 
 df_income_period.to_csv('inc1.csv', index=False)
 df_expenses_period.to_csv('exp1.csv', index=False)
 df_inventory_period.to_csv('invvvvv1.csv', index=False)
 
 inventory_value = getting_inventory_value(df_inventory_period)
 
-#cash, account_receivable = calculating_cash_receivable(df_income_period)
+cash, account_receivable, total_liabilities = calculating_cash_receivable(df_income_period, df_expenses_period, year, quarter)
+
+print('CASH', cash)
+print('Account Receivable', account_receivable)
+print('inventory', inventory_value)
+print('TOTAL Current Assets', cash + account_receivable + inventory_value)
+
+print('Current LIABILITIES', total_liabilities)
+print('Profit from Period')
+print('Retained Profit')
+print('TOTAL Liability + Equity')
 
 

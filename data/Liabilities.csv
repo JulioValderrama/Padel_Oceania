@@ -1,5 +1,5 @@
 loan_entry_id,loan_id,lender_name,loan_amount,repayment_amout,balance,date,description
-1,LN001,Julio,"1,724.00",0.00,"1,724.00",23/04/2024,Loan from Julio to buy the 1º batch
-2,LN002,Duen,"3,954.45",0.00,"3,954.45",13/06/2024,Loan from Duen to buy the 2º batch
-3,LN002,Duen,"1,922.53",0.00,"1,922.53",20/08/2024,Loan from Duen to buy the 3º batch
-4,LN002,Duen,806.44,0.00,806.44,18/09/2024,Loan from Duen to buy the 4º batch
+1,LN001,Julio,1724,0,1724,23/04/2024,Loan from Julio to buy the 1º batch
+2,LN002,Duen,3954.45,0,3954.45,16/06/2024,Loan from Duen to buy the 2º batch
+3,LN002,Duen,1922.53,0,1922.53,20/08/2024,Loan from Duen to buy the 3º batch
+4,LN002,Duen,806.44,0,806.44,18/09/2024,Loan from Duen to buy the 4º batch
