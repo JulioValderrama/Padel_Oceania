@@ -125,7 +125,7 @@ def getting_unit_price_with_order_id(df_income, order_id):
 
 def inventory_value_beggining_period(df_inventory, year, quarter=None, month=None):
 
-    df_inventory_filtered = filtering_by_year_quarter_month(df_inventory, year, quarter, month)
+    df_inventory_filtered = filter_transactions_before_period(df_inventory, year, quarter)
 
     total_cogs = 0
 
@@ -133,4 +133,54 @@ def inventory_value_beggining_period(df_inventory, year, quarter=None, month=Non
         total_cogs += row['quantity'] * row['total_cogs']
 
     return total_cogs
+
+def add_inventory_per_period(expenses_df, year, quarter=None):   #FIFO
     
+    df_expenses = convert_date(expenses_df)
+    df_filtered_expenses = filtering_by_year_quarter_month(df_expenses, year, quarter)
+
+    df_inventory_period = pd.DataFrame(columns=['date','sku','batch','quantity','unit_price','total_transaction','ean','asin','supplier','total_cogs'])
+    
+    for index, row in df_filtered_expenses.iterrows():
+        if row['expense_type'] == 'purchase_inventory':
+
+            # Find additional expenses related to this batch; SHIPPING and IMPORT DUTIES
+            batch_shipping = pd.to_numeric(df_filtered_expenses[
+                (df_filtered_expenses['expense_type'] == 'shipping_supplier') &
+                (df_filtered_expenses['batch'] == row['batch'])
+            ]['total_transaction'], errors='coerce').sum()
+
+            batch_import_duties = pd.to_numeric(df_filtered_expenses[
+                (df_filtered_expenses['expense_type'] == 'import_taxes') &
+                (df_filtered_expenses['batch'] == row['batch'])
+            ]['total_transaction'], errors='coerce').sum()
+
+            # Total quantity per batch
+            total_quantity_batch = df_filtered_expenses[
+                (df_filtered_expenses['batch'] == row['batch']) &
+                (df_filtered_expenses['expense_type'] == 'purchase_inventory')                
+            ]['quantity'].sum()
+
+            # Total additional costs for this batch
+            total_additional_costs = batch_shipping + batch_import_duties
+
+            # Calculate total COGS per BATCH and divide it to each item to get unit_price
+            unit_price = row['unit_price'] + total_additional_costs / total_quantity_batch
+
+            inventory_row = {
+                'date': row['date'],
+                'sku': row['sku'],
+                'batch': row['batch'],
+                'quantity': row['quantity'],
+                'unit_price': row['unit_price'],
+                'total_transaction': row['total_transaction'],
+                'ean': row['ean'],
+                'asin': row['asin'],
+                'supplier': row['channel'],
+                'total_cogs': unit_price    # Total COGS per unit (shipping and taxes) + the unit_price
+            }
+            
+            df_inventory_period.loc[len(df_inventory_period)] = inventory_row
+
+    return df_inventory_period
+

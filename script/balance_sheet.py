@@ -72,4 +72,6 @@ def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quar
 
     return total_cogs, inventory_tracker
 
+def calculating(df_expenses, df_income, df_inventory, year, quarter=None):
 
+    
