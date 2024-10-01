@@ -48,7 +48,8 @@ def add_inventory(expenses_df):   #FIFO
             df_inventory.loc[len(df_inventory)] = inventory_row
 
 # UPDATING INVENTORY AFTER A SALE GOING TROUGH BATCHES IN INVENTORY
-def update_inventory(sku, quantity_sold):
+def update_inventory(df_inventory, sku, quantity_sold):
+
     remaining_quantity = quantity_sold
 
     # Filter inventory by SKU and sort by batch (FIFO)
@@ -123,21 +124,19 @@ def getting_unit_price_with_order_id(df_income, order_id):
 
     return unit_price
 
-def inventory_value_beggining_period(df_inventory, year, quarter=None, month=None):
-
-    df_inventory_filtered = filter_transactions_before_period(df_inventory, year, quarter)
+def getting_inventory_value(df_inventory):
 
     total_cogs = 0
 
-    for _, row in df_inventory_filtered.iterrows():
+    for _, row in df_inventory.iterrows():
         total_cogs += row['quantity'] * row['total_cogs']
 
     return total_cogs
 
-def add_inventory_per_period(expenses_df, year, quarter=None):   #FIFO
+def create_inventory_per_period(expenses_df, year, quarter=None):   #FIFO
     
     df_expenses = convert_date(expenses_df)
-    df_filtered_expenses = filtering_by_year_quarter_month(df_expenses, year, quarter)
+    df_filtered_expenses = filter_transactions_before_period(df_expenses, year, quarter)
 
     df_inventory_period = pd.DataFrame(columns=['date','sku','batch','quantity','unit_price','total_transaction','ean','asin','supplier','total_cogs'])
     

@@ -161,11 +161,11 @@ df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 #  ---------------------------- GENERATING FINANCIAL REPORTS--------------------------------------------------------------------------
 
 year = 2024
-quarter = 3
+quarter = 1
 month = None
 
 # Generate comparative income statement for a specific period
-current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, year, quarter, month)
+current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, df_inventory, year, quarter, month)
 
 # Create the table and export to PDF (period labels generated automatically)
 create_comparative_table(current_period, previous_period, current_period_label, previous_period_label)
@@ -175,8 +175,8 @@ df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
 
-result = add_inventory_per_period(df_expenses, year, quarter)
 
-print(result)
+df_inventory_period = updating_inventory_with_sales_period(year, quarter)
+inventory_value = getting_inventory_value(df_inventory_period)
 
-result.to_csv('result.csv', index=False)
+print(inventory_value)

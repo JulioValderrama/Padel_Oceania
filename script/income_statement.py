@@ -2,8 +2,8 @@
 
 import pandas as pd
 from data import df_inventory, df_expenses, df_income, operational_expenses, other_income
-from inventory import update_inventory
-from utils import generate_period_label, filtering_by_year_quarter_month
+from inventory import *
+from utils import *
 
 # Function to update the payment_status from PENDING to COMPLETED for those sales credited and PAID from Amazon in Amazon.csv to Income.csv
 def updating_payment_status(income_df, order_id):
@@ -71,7 +71,7 @@ def calculating_other_income(df_income, year, quarter=None, month=None):
 # ---------------------------------REPORT GENERATION LOGIC -------------------------------------
 
 # Income Statement Function that will get the Income Statement out of the period the User enters
-def income_statement(df_income, df_expenses, year, quarter=None, month=None):
+def income_statement(df_income, df_expenses, df_inventory, year, quarter=None, month=None):
 
     # Filter data by year, quarter, or month
     df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
@@ -92,7 +92,7 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
         cogs += calculate_cogs(sku, quantity_sold)
 
         # Update the inventory after calculating COGS
-        update_inventory(sku, quantity_sold)  # Now correctly passing the arguments
+        update_inventory(df_inventory, sku, quantity_sold)  # Now correctly passing the arguments
         
         total_operational_expenses += sale['total_amazon_cost'] if not pd.isna(sale['total_amazon_cost']) else 0        
 
@@ -126,9 +126,9 @@ def income_statement(df_income, df_expenses, year, quarter=None, month=None):
     return income_statement
 
 # Function to calculate current and previous period income statements and automatically generate labels
-def generate_comparative_income_statement(df_income, df_expenses, year, quarter=None, month=None):
+def generate_comparative_income_statement(df_income, df_expenses, df_inventory, year, quarter=None, month=None):
     # Calculate current period income statement
-    current_period = income_statement(df_income, df_expenses, year, quarter, month)
+    current_period = income_statement(df_income, df_expenses, df_inventory, year, quarter, month)
 
     # Generate current period label
     current_period_label = generate_period_label(year, quarter, month)
@@ -148,6 +148,6 @@ def generate_comparative_income_statement(df_income, df_expenses, year, quarter=
     else:
         previous_year = year - 1
         previous_period_label = generate_period_label(previous_year)
-        previous_period = income_statement(df_income, df_expenses, previous_year)
+        previous_period = income_statement(df_income, df_expenses, df_inventory, previous_year)
 
     return current_period, previous_period, current_period_label, previous_period_label

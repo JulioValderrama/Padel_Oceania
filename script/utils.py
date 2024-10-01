@@ -38,26 +38,26 @@ def filtering_by_year_quarter_month(df, year, quarter=None, month=None):
 
 def filter_transactions_before_period(df, year, quarter=None):
 
-        # Ensure the 'date' column is in datetime format
+    # Ensure the 'date' column is in datetime format
     df['date'] = pd.to_datetime(df['date'])
 
-    # Determine the start date of the quarter, if a quarter is provided
+    # Determine the start date of the next quarter or next year
     if quarter == 1:
-        start_date = f'{year}-01-01'
+        start_date = f'{year}-04-01'  # Q2 starts on April 1st
     elif quarter == 2:
-        start_date = f'{year}-04-01'
+        start_date = f'{year}-07-01'  # Q3 starts on July 1st
     elif quarter == 3:
-        start_date = f'{year}-07-01'
+        start_date = f'{year}-10-01'  # Q4 starts on October 1st
     elif quarter == 4:
-        start_date = f'{year}-10-01'
+        start_date = f'{year + 1}-01-01'  # Q1 of the next year starts on January 1st
     else:
-        # If no quarter is provided, filter for the entire previous year
-        start_date = f'{year}-01-01'
+        # If no quarter is provided, include everything before the next year (which covers the whole year)
+        start_date = f'{year + 1}-01-01'
 
     # Convert start_date to datetime for comparison
     start_date = pd.to_datetime(start_date)
 
-    # Filter the DataFrame for transactions before the start of the given quarter
+    # Filter the DataFrame for transactions before the start of the next quarter or next year
     df_filtered = df[df['date'] < start_date]
 
     return df_filtered
@@ -78,3 +78,4 @@ def get_prior_year_and_quarter(current_year, current_quarter=None):
         prior_quarter = None
     
     return prior_year, prior_quarter
+

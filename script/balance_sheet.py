@@ -3,75 +3,33 @@ import math
 
 from data import *
 from inventory import *
-from utils import get_prior_year_and_quarter
 
-def calculating_inventory_value(df_expenses, df_income, df_inventory, year, quarter=None, month=None):
+def updating_inventory_with_sales_period(year, quarter=None):
 
-    prior_year, prior_quarter = get_prior_year_and_quarter(year, quarter)
+    df_income = pd.read_csv('data/Income.csv')
+    df_expenses = pd.read_csv('data/Expenses.csv')
 
-    prior_total_cogs = inventory_value_beggining_period(df_inventory, prior_year, prior_quarter)
-    print('Prior', prior_total_cogs)
+    df_income = convert_date(df_income)
+    df_expenses = convert_date(df_expenses)
 
-    current_period = inventory_value_beggining_period(df_inventory, year, quarter)
-    print('CURRENT', current_period)
+    df_inventory = create_inventory_per_period(df_expenses, year, quarter)
 
-    # Filter purchases and sales by date range
-    df_expenses_filtered = filtering_by_year_quarter_month(df_expenses, year, quarter, month)
-    df_income_filtered = filtering_by_year_quarter_month(df_income, year, quarter, month)
+    # Filter data by year, quarter, or month
+    df_income_filtered = filter_transactions_before_period(df_income, year, quarter)
 
-    # Initialize inventory dictionary to track quantities of each SKU
-    inventory_tracker = {}
+    # Iterate through sales and calculate totals
+    for _, sale in df_income_filtered.iterrows():
+        sku = sale['sku']
+        quantity_sold = sale['quantity']
 
-    # Process purchases (adding to inventory)
-    for _, row in df_expenses_filtered.iterrows():
-
-        if row['expense_type'] == 'purchase_inventory':
-
-            sku = row['sku']
-
-            if sku not in inventory_tracker:
-                inventory_tracker[sku] = {
-                    'quantity': 0,
-                    'total_cogs': 0,
-                    'average_cogs': 0
-                }
-
-            batch = row['batch']
-            cogs = float(df_inventory[(df_inventory['batch'] == batch) & (df_inventory['sku'] == sku)]['total_cogs'].values[0])
-
-            inventory_tracker[sku]['quantity'] += row['quantity']
-            inventory_tracker[sku]['total_cogs'] += cogs * row['quantity']
-            inventory_tracker[sku]['average_cogs'] = inventory_tracker[sku]['total_cogs'] / inventory_tracker[sku]['quantity']
-
-    # Process sales (subtracting from inventory)
-    for _, income_row in df_income_filtered.iterrows():
-
-        if income_row['sku'] in inventory_tracker:
-
-            inventory_tracker[income_row['sku']]['quantity'] -= income_row['quantity']
-        
-        if income_row['income_type'] == 'Refund':
-
-            refunded_sku = getting_sku_with_order_id(df_income_filtered, income_row['order_id'])
-            unit_price = getting_unit_price_with_order_id(df_income_filtered, income_row['order_id'])
-
-            total_transaction = abs(income_row['total_transaction'])
-
-            # Calculate how many items were refunded
-            refunded_quantity = total_transaction / unit_price  # Don't round yet
-
-            # If the refunded quantity is not an exact number, round up to get the full item count
-            if refunded_quantity % 1 != 0:
-                refunded_quantity = math.ceil(refunded_quantity)
-            
-            # Add refunded quantity back to inventory (without subtracting 1)
-            inventory_tracker[refunded_sku]['quantity'] += int(refunded_quantity)
-
-
-    total_cogs = sum(data['quantity'] * data['average_cogs'] for data in inventory_tracker.values())
-
-    return total_cogs, inventory_tracker
-
-def calculating(df_expenses, df_income, df_inventory, year, quarter=None):
+        # Update the inventory after calculating COGS
+        update_inventory(df_inventory, sku, quantity_sold)  # Now correctly passing the arguments
 
     
+    return df_inventory
+
+def calculating_inventory_value_period(df_inventory):
+
+    inventory_value = getting_inventory_value(df_inventory)
+
+    return inventory_value
