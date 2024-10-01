@@ -14,7 +14,6 @@ def updating_payment_status(income_df, order_id):
         if (row['order_id'] == order_id) and (row['payment_status'] == 'pending'):
             income_df.at[index, 'payment_status'] = 'completed'
     
-    
     return income_df
 
 # Function to calculate the COGS

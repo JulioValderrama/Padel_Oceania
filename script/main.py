@@ -161,7 +161,7 @@ df_income, df_inventory = reading_amazon_csv_to_income(df_income, df_inventory)
 #  ---------------------------- GENERATING FINANCIAL REPORTS--------------------------------------------------------------------------
 
 year = 2024
-quarter = 1
+quarter = 3
 month = None
 
 # Generate comparative income statement for a specific period
@@ -176,7 +176,18 @@ df_inventory.to_csv('resultInven.csv', index=False)
 df_expenses.to_csv('resultExp.csv', index=False)
 
 
-df_inventory_period = updating_inventory_with_sales_period(year, quarter)
+# WORK FLOW FOR BALANCE SHEET CREATING INVENTORY FOR THE SPECIFIC PERIOD
+
+# Creating Data Frames with the Specific Period
+df_income_period, df_expenses_period, df_inventory_period = updating_inventory_with_sales_period(year, quarter)
+
+# Updating Inventory and Income with Amazon.csv with also Refunds
+df_income_period, df_inventory_period = updating_income_inventory_with_amazon(df_income_period, df_inventory_period, year, quarter)
+
+df_income_period.to_csv('inc1.csv', index=False)
+df_expenses_period.to_csv('exp1.csv', index=False)
+df_inventory_period.to_csv('invvvvv1.csv', index=False)
+
 inventory_value = getting_inventory_value(df_inventory_period)
 
-print(inventory_value)
+
