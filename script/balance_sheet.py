@@ -201,7 +201,7 @@ def calculating_total_liabilities_period(year, quarter=None):
     df_liabilities = convert_date(df_liabilities)
     
     # Filter the DataFrame based on the year and quarter
-    df_liabilities_filtered = filtering_by_year_quarter_month(df_liabilities, year, quarter)
+    df_liabilities_filtered = filter_transactions_before_period(df_liabilities, year, quarter)
 
     # Sum the 'balance' column
     total_liabilities = df_liabilities_filtered['balance'].sum()
@@ -215,7 +215,7 @@ def calculating_cash_receivable(df_income_period, df_expenses_period, year, quar
     df_amazon_period = filter_transactions_before_period(df_amazon, year, quarter)
 
     account_receivable = 0
-    total_revenue_amazon = 0
+    total_revenue_amazon = df_amazon_period.loc[df_amazon_period['Transaction Status'] == 'Released', 'Total (AUD)'].sum()
     total_revenue_facebook = 0
     total_expenses = df_expenses_period.loc[df_expenses_period['channel'] != 'Amazon', 'total_transaction'].sum()
     total_liabilities = calculating_total_liabilities_period(year, quarter) 
@@ -228,8 +228,13 @@ def calculating_cash_receivable(df_income_period, df_expenses_period, year, quar
         if row['channel'] == 'Facebook Sales':
             total_revenue_facebook += row['total_transaction']
 
-    total_revenue_amazon += df_amazon_period['Total (AUD)'].sum()
-
     cash = (total_revenue_amazon + total_revenue_facebook + total_liabilities) - total_expenses
+
+    print('FACEBOOK',total_revenue_facebook)
+    print('AMAZON', total_revenue_amazon)
+    print('TOTAL revenue Amazon', total_revenue_amazon)
+    print('CASH', cash)
+    print('TOTAL Expneses', total_expenses)
+    print('Lia', total_liabilities)
     
     return cash, account_receivable, total_liabilities

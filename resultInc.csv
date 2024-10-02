@@ -27,79 +27,77 @@ order_entry_id,order_id,income_type,date,sku,channel,quantity,amazon_fee,amazon_
 26,249-8797930-2768648,Sales,2024-06-26,162593.0,Amazon Sales,1,10.73,1.09,10.2,22.02,75.0,75.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
 27,,Sales,2024-06-26,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
 28,,Sales,2024-06-27,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-29,S03-4517393-2217604,Sales,2024-06-27,162593.0,Reimbursement,1,,,,,54.99,54.99,card,completed,FBA Inventory Reimbursement
-30,,Sales,2024-06-29,172892.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,2º Batch Bullpadel Raider Power
-31,,Sales,2024-07-02,148027.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-32,,Sales,2024-07-02,134487.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Bullpadel Indiga Control
-33,,Sales,2024-07-05,148058.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas Drive Light 3.2 2023
-34,,Sales,2024-07-05,163022.0,Facebook Sales,1,,,,,125.0,125.0,cash,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
-35,249-3955012-2813466,Sales,2024-07-08,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
-36,250-7067748-6333400,Sales,2024-07-08,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
+29,,Sales,2024-06-29,172892.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,2º Batch Bullpadel Raider Power
+30,,Sales,2024-07-02,148027.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
+31,,Sales,2024-07-02,134487.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,1º Batch Sale Bullpadel Indiga Control
+32,,Sales,2024-07-05,148058.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas Drive Light 3.2 2023
+33,,Sales,2024-07-05,163022.0,Facebook Sales,1,,,,,125.0,125.0,cash,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
+34,249-3955012-2813466,Sales,2024-07-08,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
+35,250-7067748-6333400,Sales,2024-07-08,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
+36,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
 37,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
-38,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,1º Batch Sale Joma Master Negro Turquesa
+38,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
 39,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-40,250-3456886-6516666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-41,503-8863080-3089421,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-42,249-0515218-4583830,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+40,503-8863080-3089421,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+41,249-0515218-4583830,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+42,249-7937233-9184666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
 43,249-7937233-9184666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-44,249-7937233-9184666,Sales,2024-07-10,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-45,249-8258704-3583008,Sales,2024-07-13,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-46,250-0125711-9400600,Sales,2024-07-17,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-47,,Sales,2024-07-18,162593.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,1º Batch Sale Joma Master Negro Turquesa
-48,,Sales,2024-07-18,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-49,,Sales,2024-07-18,172892.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,2º Batch Bullpadel Raider Power
+44,249-8258704-3583008,Sales,2024-07-13,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+45,250-0125711-9400600,Sales,2024-07-17,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+46,,Sales,2024-07-18,162593.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,1º Batch Sale Joma Master Negro Turquesa
+47,,Sales,2024-07-18,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
+48,,Sales,2024-07-18,172892.0,Facebook Sales,1,,,,,90.0,90.0,cash,completed,2º Batch Bullpadel Raider Power
+49,249-4949848-4866252,Sales,2024-07-19,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
 50,249-4949848-4866252,Sales,2024-07-19,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-51,249-4949848-4866252,Sales,2024-07-19,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-52,,Sales,2024-07-22,172892.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,2º Batch Bullpadel Raider Power
-53,503-7286769-5054207,Sales,2024-07-27,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
-54,,Sales,2024-07-29,163016.0,Facebook Sales,1,18.59,1.09,12.21,31.89,125.0,125.0,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+51,,Sales,2024-07-22,172892.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,2º Batch Bullpadel Raider Power
+52,503-7286769-5054207,Sales,2024-07-27,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
+53,,Sales,2024-07-29,163016.0,Facebook Sales,1,18.59,1.09,12.21,31.89,125.0,125.0,cash,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+54,,Sales,2024-07-31,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
 55,,Sales,2024-07-31,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
-56,,Sales,2024-07-31,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
-57,249-7263331-3479828,Sales,2024-08-01,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-58,,Sales,2024-08-02,172892.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,2º Batch Bullpadel Raider Power
+56,249-7263331-3479828,Sales,2024-08-01,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+57,,Sales,2024-08-02,172892.0,Facebook Sales,1,,,,,50.0,50.0,cash,completed,2º Batch Bullpadel Raider Power
+58,,Sales,2024-08-02,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
 59,,Sales,2024-08-02,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-60,,Sales,2024-08-02,142586.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Wilson Blade Team V2 Black
-61,,Sales,2024-08-02,162593.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Joma Master Negro Turquesa
-62,,Sales,2024-08-02,148027.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
-63,250-4739521-0932628,Sales,2024-08-07,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
-64,503-7751955-7428619,Sales,2024-08-08,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-65,503-8128780-2175028,Sales,2024-08-09,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-66,250-8405116-0119863,Sales,2024-08-11,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
-67,249-4580099-3260655,Sales,2024-08-12,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-68,503-0127524-4596677,Sales,2024-08-12,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-69,503-0606708-6568608,Sales,2024-08-13,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
-70,250-8297974-4019006,Sales,2024-08-18,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
+60,,Sales,2024-08-02,162593.0,Facebook Sales,1,,,,,75.0,75.0,cash,completed,2º Batch Sale Joma Master Negro Turquesa
+61,,Sales,2024-08-02,148027.0,Facebook Sales,1,,,,,100.0,100.0,cash,completed,2º Batch Sale Adidas RX 2000 Light 2023
+62,250-4739521-0932628,Sales,2024-08-07,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,completed,1º Batch Sale Bullpadel Indiga Control
+63,503-7751955-7428619,Sales,2024-08-08,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+64,503-8128780-2175028,Sales,2024-08-09,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+65,250-8405116-0119863,Sales,2024-08-11,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
+66,249-4580099-3260655,Sales,2024-08-12,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+67,503-0127524-4596677,Sales,2024-08-12,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+68,503-0606708-6568608,Sales,2024-08-13,163016.0,Amazon Sales,1,18.59,1.09,12.21,31.89,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Padel Racket
+69,250-8297974-4019006,Sales,2024-08-18,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
+70,250-3854065-1544602,Sales,2024-08-21,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,REFUNDED,2º Batch Sale Joma Master Negro Turquesa
 71,250-3854065-1544602,Sales,2024-08-21,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,REFUNDED,2º Batch Sale Joma Master Negro Turquesa
-72,250-3854065-1544602,Sales,2024-08-21,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,REFUNDED,2º Batch Sale Joma Master Negro Turquesa
-73,250-0885619-2819055,Sales,2024-08-21,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+72,250-0885619-2819055,Sales,2024-08-21,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+73,,Sales,2024-08-24,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
 74,,Sales,2024-08-24,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
-75,,Sales,2024-08-24,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
+75,,Sales,2024-08-26,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
 76,,Sales,2024-08-26,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
-77,,Sales,2024-08-26,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
-78,249-8107921-6580608,Sales,2024-08-27,148027.0,Amazon Sales,1,17.88,1.09,12.32,31.29,125.0,125.0,card,completed,2º Batch Sale Adidas RX 2000 Light 2023
-79,503-6594219-0903852,Sales,2024-08-27,148027.0,Amazon Sales,1,17.88,1.09,12.32,31.29,125.0,125.0,card,completed,2º Batch Sale Adidas RX 2000 Light 2023
-80,,Sales,2024-08-29,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
-81,250-3679977-4481405,Sales,2024-08-31,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
-82,249-0012290-7942265,Sales,2024-08-31,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
-83,503-9109527-9744600,Sales,2024-08-31,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-84,503-1248404-0062268,Sales,2024-08-31,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-85,503-8109331-5870234,Sales,2024-09-03,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-86,249-4967784-0319847,Sales,2024-09-03,163022.0,Amazon Sales,1,17.89,1.09,9.83,28.81,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
-87,,Sales,2024-09-03,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
-88,503-1985816-6728601,Sales,2024-09-04,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+77,249-8107921-6580608,Sales,2024-08-27,148027.0,Amazon Sales,1,17.88,1.09,12.32,31.29,125.0,125.0,card,completed,2º Batch Sale Adidas RX 2000 Light 2023
+78,503-6594219-0903852,Sales,2024-08-27,148027.0,Amazon Sales,1,17.88,1.09,12.32,31.29,125.0,125.0,card,completed,2º Batch Sale Adidas RX 2000 Light 2023
+79,,Sales,2024-08-29,141108.0,Facebook Sales,1,,,,,80.0,80.0,cash,completed,1º Batch Sale Dunlop Speed Elite
+80,250-3679977-4481405,Sales,2024-08-31,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
+81,249-0012290-7942265,Sales,2024-08-31,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
+82,503-9109527-9744600,Sales,2024-08-31,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+83,503-1248404-0062268,Sales,2024-08-31,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+84,503-8109331-5870234,Sales,2024-09-03,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+85,249-4967784-0319847,Sales,2024-09-03,163022.0,Amazon Sales,1,17.89,1.09,9.83,28.81,130.0,130.0,card,completed,2º Batch Sale Adidas Drive 3.3 Vintage 2024
+86,,Sales,2024-09-03,148187.0,Facebook Sales,1,18.59,1.09,12.21,31.89,100.0,100.0,cash,completed,2º Batch Bullpadel Indiga Power 2023
+87,503-1985816-6728601,Sales,2024-09-04,162593.0,Amazon Sales,1,12.01,1.09,12.66,25.76,84.0,84.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+88,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
 89,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
-90,249-4824839-9495848,Sales,2024-09-08,172892.0,Amazon Sales,1,14.16,1.09,12.32,27.57,99.0,99.0,card,completed,2º Batch Sale Bullpadel Raider Power
-91,503-4667779-4969425,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-92,249-9041422-5781436,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
-93,249-4985657-5131025,Sales,2024-09-22,142586.0,Amazon Sales,1,17.16,1.09,12.66,30.91,120.0,120.0,card,completed,2º Batch Sale Wilson Blade Team V2 Black
-94,250-0977414-1835834,Sales,2024-09-26,142586.0,Amazon Sales,1,17.16,1.09,12.66,30.91,120.0,120.0,card,pending,2º Batch Sale Wilson Blade Team V2 Black
-95,249-3376935-2662267,Sales,2024-09-28,142586.0,Amazon Sales,1,18.59,1.09,11.19,30.87,130.0,130.0,card,pending,3º Batch Sale Drive 3.3 Vintage
-96,249-0507633-8363005,Sales,2024-09-30,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,pending,3º Batch Sale Joma Master Negro Turquesa
-97,250-4073976-2232635,Sales,2024-09-30,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,pending,3º Batch Sale Bullpadel Indiga Control
-98,250-3854065-1544602,Refund,2024-09-04,,Amazon,1,,,,,-146.61,-146.61,cash,completed,"Padel Racket Joma Master, high Professio..."
-99,,Amazon Repayment,2024-07-12,,Amazon,1,,,,,3.05,3.05,cash,completed,Successful charge
-100,249-7731852-6688660,Amazon Repayment for faulty Item,2024-06-28,,Amazon,1,,,,,54.99,54.99,cash,REFUNDED,FBA Inventory Reimbursement
-101,,Amazon Repayment,2024-06-07,,Amazon,1,,,,,13.78,13.78,cash,completed,Successful charge
-102,249-7731852-6688660,Refund,2024-06-04,,Amazon,1,,,,,-66.42,-66.42,cash,completed,"Padel Racket Joma Master, high Professio..."
-103,,Amazon Repayment,2024-05-17,,Amazon,1,,,,,10.98,10.98,cash,completed,Successful charge
-104,,Amazon Repayment,2024-04-26,,Amazon,1,,,,,54.95,54.95,cash,completed,Successful charge
+90,503-4667779-4969425,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+91,249-9041422-5781436,Sales,2024-09-09,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,completed,2º Batch Sale Joma Master Negro Turquesa
+92,249-4985657-5131025,Sales,2024-09-22,142586.0,Amazon Sales,1,17.16,1.09,12.66,30.91,120.0,120.0,card,completed,2º Batch Sale Wilson Blade Team V2 Black
+93,250-0977414-1835834,Sales,2024-09-26,142586.0,Amazon Sales,1,17.16,1.09,12.66,30.91,120.0,120.0,card,pending,2º Batch Sale Wilson Blade Team V2 Black
+94,249-3376935-2662267,Sales,2024-09-28,142586.0,Amazon Sales,1,18.59,1.09,11.19,30.87,130.0,130.0,card,pending,3º Batch Sale Drive 3.3 Vintage
+95,249-0507633-8363005,Sales,2024-09-30,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,pending,3º Batch Sale Joma Master Negro Turquesa
+96,250-4073976-2232635,Sales,2024-09-30,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,pending,3º Batch Sale Bullpadel Indiga Control
+97,250-3854065-1544602,Refund,2024-09-04,,Amazon,1,,,,,-146.61,-146.61,cash,completed,"Padel Racket Joma Master, high Professio..."
+98,,Amazon Repayment,2024-07-12,,Amazon,1,,,,,3.05,3.05,cash,completed,Successful charge
+99,249-7731852-6688660,Amazon Repayment for faulty Item,2024-06-28,,Amazon,1,,,,,54.99,54.99,cash,REFUNDED,FBA Inventory Reimbursement
+100,,Amazon Repayment,2024-06-07,,Amazon,1,,,,,13.78,13.78,cash,completed,Successful charge
+101,249-7731852-6688660,Refund,2024-06-04,,Amazon,1,,,,,-66.42,-66.42,cash,completed,"Padel Racket Joma Master, high Professio..."
+102,,Amazon Repayment,2024-05-17,,Amazon,1,,,,,10.98,10.98,cash,completed,Successful charge

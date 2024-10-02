@@ -164,12 +164,10 @@ year = 2024
 quarter = 3
 month = None
 
-# Generate comparative income statement for a specific period
-current_period, previous_period, current_period_label, previous_period_label = generate_comparative_income_statement(df_income, df_expenses, df_inventory, year, quarter, month)
+income_statement_dictionary = income_statement(df_income, df_expenses, df_inventory, year, quarter)
+print(income_statement_dictionary)
 
-# Create the table and export to PDF (period labels generated automatically)
-create_comparative_table(current_period, previous_period, current_period_label, previous_period_label)
-export_to_pdf(current_period, previous_period, current_period_label, previous_period_label)
+print('NET PROFIT', income_statement_dictionary['net_profit'])
 
 df_income.to_csv('resultInc.csv', index=False)
 df_inventory.to_csv('resultInven.csv', index=False)
@@ -196,14 +194,12 @@ inventory_value = getting_inventory_value(df_inventory_period)
 
 cash, account_receivable, total_liabilities = calculating_cash_receivable(df_income_period, df_expenses_period, year, quarter)
 
-print('CASH', cash)
-print('Account Receivable', account_receivable)
-print('inventory', inventory_value)
-print('TOTAL Current Assets', cash + account_receivable + inventory_value)
+# print('CASH', cash)
+# print('Account Receivable', account_receivable)
+# print('inventory', inventory_value)
+# print('TOTAL Current Assets', cash + account_receivable + inventory_value)
 
-print('Current LIABILITIES', total_liabilities)
-print('Profit from Period')
-print('Retained Profit')
-print('TOTAL Liability + Equity')
-
-
+# print('Current LIABILITIES', total_liabilities)
+# print('Profit from Period')
+# print('Retained Profit')
+# print('TOTAL Liability + Equity')

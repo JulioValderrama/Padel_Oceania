@@ -96,7 +96,7 @@ def income_statement(df_income, df_expenses, df_inventory, year, quarter=None, m
         total_operational_expenses += sale['total_amazon_cost'] if not pd.isna(sale['total_amazon_cost']) else 0        
 
     gross_margin = total_revenue - cogs
-    operational_margin = gross_margin - total_operational_expenses
+    operational_margin = gross_margin - total_operational_expenses + total_other_income
     taxes = 0  # Adjust taxes based on your logic
     net_profit = operational_margin - taxes
 
