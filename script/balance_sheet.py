@@ -129,7 +129,7 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
                 'order_entry_id': current_income_id,
                 'income_type': 'Amazon Repayment',
                 'date': row['date'],
-                'channel': 'Amazon',
+                'channel': 'Other Amazon',
                 'quantity': 1,
                 'unit_price': row['Total (AUD)'],
                 'total_transaction': row['Total (AUD)'],
@@ -159,7 +159,7 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
                 'order_id': row['Order ID'],
                 'income_type': 'Amazon Repayment for faulty Item',
                 'date': row['date'],
-                'channel': 'Amazon',
+                'channel': 'Other Amazon',
                 'quantity': 1,
                 'unit_price': row['Total (AUD)'],
                 'total_transaction': row['Total (AUD)'],
@@ -181,7 +181,7 @@ def updating_income_inventory_with_amazon(df_income_period, df_inventory_period,
                 'order_id': row['Order ID'],
                 'income_type': 'Refund',
                 'date': row['date'],
-                'channel': 'Amazon',
+                'channel': 'Other Amazon',
                 'quantity': 1,
                 'unit_price': row['Total (AUD)'],
                 'total_transaction': row['Total (AUD)'],
@@ -214,27 +214,21 @@ def calculating_cash_receivable(df_income_period, df_expenses_period, year, quar
     df_amazon = convert_date(df_amazon)
     df_amazon_period = filter_transactions_before_period(df_amazon, year, quarter)
 
-    account_receivable = 0
-    total_revenue_amazon = df_amazon_period.loc[df_amazon_period['Transaction Status'] == 'Released', 'Total (AUD)'].sum()
+    account_receivable = df_amazon_period[df_amazon_period['Transaction Status'] == 'Deferred']['Total (AUD)'].sum()
+    total_revenue_amazon = df_amazon_period.loc[(df_amazon_period['Transaction Status'] == 'Released') & (df_amazon_period['Transaction type'] == 'Order payment'), 'Total (AUD)'].sum()
     total_revenue_facebook = 0
-    total_expenses = df_expenses_period.loc[df_expenses_period['channel'] != 'Amazon', 'total_transaction'].sum()
+    total_expenses = df_expenses_period['total_transaction'].sum()
     total_liabilities = calculating_total_liabilities_period(year, quarter) 
 
     for _, row in df_income_period.iterrows():
-
-        if row['payment_status'] == 'pending':
-            account_receivable += row['total_transaction']
         
         if row['channel'] == 'Facebook Sales':
             total_revenue_facebook += row['total_transaction']
+        
+        if row['channel'] == 'Other Amazon':
+            total_revenue_amazon += row['total_transaction']
+        
 
     cash = (total_revenue_amazon + total_revenue_facebook + total_liabilities) - total_expenses
-
-    print('FACEBOOK',total_revenue_facebook)
-    print('AMAZON', total_revenue_amazon)
-    print('TOTAL revenue Amazon', total_revenue_amazon)
-    print('CASH', cash)
-    print('TOTAL Expneses', total_expenses)
-    print('Lia', total_liabilities)
     
     return cash, account_receivable, total_liabilities

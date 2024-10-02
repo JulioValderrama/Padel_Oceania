@@ -95,9 +95,9 @@ order_entry_id,order_id,income_type,date,sku,channel,quantity,amazon_fee,amazon_
 94,249-3376935-2662267,Sales,2024-09-28,142586.0,Amazon Sales,1,18.59,1.09,11.19,30.87,130.0,130.0,card,pending,3º Batch Sale Drive 3.3 Vintage,,
 95,249-0507633-8363005,Sales,2024-09-30,162593.0,Amazon Sales,1,12.73,1.09,12.66,26.48,89.0,89.0,card,pending,3º Batch Sale Joma Master Negro Turquesa,,
 96,250-4073976-2232635,Sales,2024-09-30,134487.0,Amazon Sales,1,14.3,1.09,12.66,28.05,99.99,99.99,card,pending,3º Batch Sale Bullpadel Indiga Control,,
-97,250-3854065-1544602,Refund,2024-09-04,,Amazon,1,,,,,-146.61,-146.61,cash,completed,"Padel Racket Joma Master, high Professio...",,116.48
-98,,Amazon Repayment,2024-07-12,,Amazon,1,,,,,3.05,3.05,cash,completed,Successful charge,,
-99,249-7731852-6688660,Amazon Repayment for faulty Item,2024-06-28,,Amazon,1,,,,,54.99,54.99,cash,REFUNDED,FBA Inventory Reimbursement,,54.07
-100,,Amazon Repayment,2024-06-07,,Amazon,1,,,,,13.78,13.78,cash,completed,Successful charge,,
-101,249-7731852-6688660,Refund,2024-06-04,,Amazon,1,,,,,-66.42,-66.42,cash,completed,"Padel Racket Joma Master, high Professio...",,
-102,,Amazon Repayment,2024-05-17,,Amazon,1,,,,,10.98,10.98,cash,completed,Successful charge,,
+97,250-3854065-1544602,Refund,2024-09-04,,Other Amazon,1,,,,,-146.61,-146.61,cash,completed,"Padel Racket Joma Master, high Professio...",,116.48
+98,,Amazon Repayment,2024-07-12,,Other Amazon,1,,,,,3.05,3.05,cash,completed,Successful charge,,
+99,249-7731852-6688660,Amazon Repayment for faulty Item,2024-06-28,,Other Amazon,1,,,,,54.99,54.99,cash,REFUNDED,FBA Inventory Reimbursement,,54.07
+100,,Amazon Repayment,2024-06-07,,Other Amazon,1,,,,,13.78,13.78,cash,completed,Successful charge,,
+101,249-7731852-6688660,Refund,2024-06-04,,Other Amazon,1,,,,,-66.42,-66.42,cash,completed,"Padel Racket Joma Master, high Professio...",,
+102,,Amazon Repayment,2024-05-17,,Other Amazon,1,,,,,10.98,10.98,cash,completed,Successful charge,,
